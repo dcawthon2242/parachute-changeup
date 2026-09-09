@@ -1,0 +1,41 @@
+ptype,driver,n_test,gain
+SL,Breaking/offspeed location,3663,30.846013729341
+SL,FB->pitch separation,3663,5.83445728719438
+SL,Setup-fastball location,3663,-0.00531645805128439
+SL,Trajectory tunnel (path ratio),3663,2.51699769393729
+SL,Spin-axis gap vs FB,3660,0.377872010719892
+SL,Active-spin gap vs FB,3656,0.103851299327071
+SL,Velocity gap vs FB,3663,0.100269334252359
+SL,Movement gap vs FB,3663,0.124068003013843
+ST,Breaking/offspeed location,2185,28.5175853385667
+ST,FB->pitch separation,2185,5.07777074151122
+ST,Setup-fastball location,2185,0.027693528434837
+ST,Trajectory tunnel (path ratio),2185,2.64611297178621
+ST,Spin-axis gap vs FB,2182,0.241268904375786
+ST,Active-spin gap vs FB,2171,-0.0531464913912541
+ST,Velocity gap vs FB,2185,0.149351706634654
+ST,Movement gap vs FB,2185,-0.0138500520970797
+CU,Breaking/offspeed location,2315,31.9910442785824
+CU,FB->pitch separation,2315,6.96189003318401
+CU,Setup-fastball location,2315,0.0952175550245472
+CU,Trajectory tunnel (path ratio),2315,2.66212944617666
+CU,Spin-axis gap vs FB,2311,-0.00273628301224184
+CU,Active-spin gap vs FB,2284,0.0948331303587306
+CU,Velocity gap vs FB,2315,0.150639008136157
+CU,Movement gap vs FB,2315,0.113450325877629
+CH,Breaking/offspeed location,3002,10.8507229386693
+CH,FB->pitch separation,3002,1.1242516362377
+CH,Setup-fastball location,3002,0.0804788928582661
+CH,Trajectory tunnel (path ratio),3002,-0.0436568679745684
+CH,Spin-axis gap vs FB,2997,0.0259434859952546
+CH,Active-spin gap vs FB,2984,0.0421964454951645
+CH,Velocity gap vs FB,3002,0.305846085462629
+CH,Movement gap vs FB,3002,0.0789257822760584
+FS,Breaking/offspeed location,991,17.0837742059267
+FS,FB->pitch separation,991,2.4716992176331
+FS,Setup-fastball location,991,0.167843916804203
+FS,Trajectory tunnel (path ratio),991,0.422911682168414
+FS,Spin-axis gap vs FB,988,0.270569544047729
+FS,Active-spin gap vs FB,983,0.0228029106660664
+FS,Velocity gap vs FB,991,-0.163018323057979
+FS,Movement gap vs FB,991,0.226257496352747

@@ -1,0 +1,676 @@
+player_name,pitch_type,n,res_loc,spin_sim,grp2
+"Bergert, Ryan",CH,40,0.188963458129356,0.678899490130075,"Residual overperformers
+(top 15% after shape+location)"
+"Dana, Caden",CH,53,0.172435305174565,0.604592922444481,"Residual overperformers
+(top 15% after shape+location)"
+"Gipson-Long, Sawyer",CH,84,0.146692567179638,0.136243310425667,"Residual overperformers
+(top 15% after shape+location)"
+"Hiraldo, Yaramil",FS,68,0.144754360302418,0.00472819178938085,"Residual overperformers
+(top 15% after shape+location)"
+"Morán, Jovani",CH,140,0.138388977086157,0.646775655126993,"Residual overperformers
+(top 15% after shape+location)"
+"Brzykcy, Zach",CH,62,0.136384703830428,0.491930066185721,"Residual overperformers
+(top 15% after shape+location)"
+"Sandlin, Nick",FS,186,0.13000634200794,0.639331072745529,"Residual overperformers
+(top 15% after shape+location)"
+"Chivilli, Angel",CH,320,0.12827464312566,0.614303499224398,"Residual overperformers
+(top 15% after shape+location)"
+"Trivino III, Lou",CH,65,0.123329109046108,0.478021056326623,"Residual overperformers
+(top 15% after shape+location)"
+"Garcia, Rico",CH,161,0.122056430591123,0.822630720598958,"Residual overperformers
+(top 15% after shape+location)"
+"Hernández, Jonathan",CH,53,0.120310407087473,0.8143636884098,"Residual overperformers
+(top 15% after shape+location)"
+"Vesia, Alex",CH,98,0.119023184379767,0.625080221854045,"Residual overperformers
+(top 15% after shape+location)"
+"Musgrove, Joe",CH,71,0.113944017117057,0.713214424505027,"Residual overperformers
+(top 15% after shape+location)"
+"Middleton, Keynan",CH,83,0.112149200699673,0.718221052661643,"Residual overperformers
+(top 15% after shape+location)"
+"Young, Alex",CH,119,0.110326044991609,0.64460989672089,"Residual overperformers
+(top 15% after shape+location)"
+"Stephan, Trevor",FS,91,0.103219560593274,0.585105194392981,"Residual overperformers
+(top 15% after shape+location)"
+"Brash, Matt",CH,58,0.102424148488496,0.278972789997029,"Residual overperformers
+(top 15% after shape+location)"
+"Horton, Cade",CH,108,0.101037934957807,0.778207258001154,"Residual overperformers
+(top 15% after shape+location)"
+"Altavilla, Dan",CH,63,0.0985957731876294,0.580018465147529,"Residual overperformers
+(top 15% after shape+location)"
+"Heller, Ben",CH,44,0.0957087125739355,0.250961560076715,"Residual overperformers
+(top 15% after shape+location)"
+"Uceta, Edwin",CH,376,0.0933687311525984,0.29625420908964,"Residual overperformers
+(top 15% after shape+location)"
+"Ribalta, Orlando",CH,86,0.0929451348724986,0.906111911567402,"Residual overperformers
+(top 15% after shape+location)"
+"Bautista, Félix",FS,121,0.0916273506574878,0.545582672685389,"Residual overperformers
+(top 15% after shape+location)"
+"Cease, Dylan",CH,108,0.0901070506798372,0.963876315103852,"Residual overperformers
+(top 15% after shape+location)"
+"Medina, Luis",CH,121,0.0870503082637274,0.125060832350665,"Residual overperformers
+(top 15% after shape+location)"
+"Perkins, Jack",CH,139,0.086694376521862,0.645338729881749,"Residual overperformers
+(top 15% after shape+location)"
+"Borucki, Ryan",FS,85,0.084939960862679,0.593377777791359,"Residual overperformers
+(top 15% after shape+location)"
+"Bazardo, Eduard",FS,40,0.0834569202809594,0.400266824471319,"Residual overperformers
+(top 15% after shape+location)"
+"Leiter Jr., Mark",FS,498,0.0830682370794522,0.426338465073541,"Residual overperformers
+(top 15% after shape+location)"
+"Bido, Osvaldo",CH,163,0.0828184344597866,0.865814386980599,"Residual overperformers
+(top 15% after shape+location)"
+"Gonsolin, Tony",FS,154,0.0823142901404379,0.359914348600535,"Residual overperformers
+(top 15% after shape+location)"
+"Koenig, Jared",CH,79,0.081979386848728,0.206088004404818,"Residual overperformers
+(top 15% after shape+location)"
+"Dunning, Dane",CH,227,0.0811695590525663,0.0512397117785202,"Residual overperformers
+(top 15% after shape+location)"
+"Cabrera, Génesis",FS,48,0.0792581067420909,0.0620774768122759,"Residual overperformers
+(top 15% after shape+location)"
+"Germán, Domingo",CH,77,0.0773179827032939,0.939320973299495,"Residual overperformers
+(top 15% after shape+location)"
+"Webb, Jacob",CH,567,0.0771427888841426,0.217063355779014,"Residual overperformers
+(top 15% after shape+location)"
+"Jax, Griffin",CH,450,0.076883203328195,0.565939997435469,"Residual overperformers
+(top 15% after shape+location)"
+"Kershaw, Clayton",FS,51,0.0768339071311174,0.661698485901149,"Residual overperformers
+(top 15% after shape+location)"
+"Festa, David",CH,284,0.0754522790146104,0.725563885783008,"Residual overperformers
+(top 15% after shape+location)"
+"Waldichuk, Ken",CH,97,0.0753710916987894,0.508852365458507,"Residual overperformers
+(top 15% after shape+location)"
+"Crismatt, Nabil",CH,124,0.0747294178216121,0.0627760057849304,"Residual overperformers
+(top 15% after shape+location)"
+"McGough, Scott",FS,229,0.0735179932439258,0.557543272537456,"Residual overperformers
+(top 15% after shape+location)"
+"Bubic, Kris",CH,329,0.0729808549949537,0.229044210498117,"Residual overperformers
+(top 15% after shape+location)"
+"Winans, Allan",CH,115,0.0728636100162655,0.155202082582641,"Residual overperformers
+(top 15% after shape+location)"
+"Lugo, Seth",FS,48,0.0725929453018881,0.859806953524497,"Residual overperformers
+(top 15% after shape+location)"
+"Saucedo, Tayler",CH,141,0.0716185078737712,0.345700487605168,"Residual overperformers
+(top 15% after shape+location)"
+"Feltner, Ryan",CH,349,0.0714748149588011,0.166066044841572,"Residual overperformers
+(top 15% after shape+location)"
+"Lambert, Peter",CH,412,0.0710044167182335,0.787430097986237,"Residual overperformers
+(top 15% after shape+location)"
+"Blackburn, Paul",CH,312,0.0700367859088932,0.410834776838382,"Residual overperformers
+(top 15% after shape+location)"
+"Alexander, Jason",CH,269,0.0698290530783613,0.49690898091022,"Residual overperformers
+(top 15% after shape+location)"
+"Gore, MacKenzie",CH,367,0.0691724883325632,0.68330909684342,"Residual overperformers
+(top 15% after shape+location)"
+"Beeks, Jalen",CH,351,0.0687905858119706,0.779085896980079,"Residual overperformers
+(top 15% after shape+location)"
+"Adam, Jason",CH,455,0.068254771704227,0.364170880689975,"Residual overperformers
+(top 15% after shape+location)"
+"Burrows, Mike",CH,433,0.0682387915845799,0.644252812000429,"Residual overperformers
+(top 15% after shape+location)"
+"Ginn, J.T.",CH,290,0.0675776058979974,0.532145245126407,"Residual overperformers
+(top 15% after shape+location)"
+"Walter, Brandon",CH,91,0.0674093949001731,0.236822987226016,"Residual overperformers
+(top 15% after shape+location)"
+"Jobe, Jackson",CH,57,0.0659107086348975,0.422429137258016,"Residual overperformers
+(top 15% after shape+location)"
+"Hernández, Carlos",FS,129,0.0655394113668991,0.876110566713665,"Residual overperformers
+(top 15% after shape+location)"
+"Henry, Tommy",CH,83,0.0635969686394907,0.623328336608692,"Residual overperformers
+(top 15% after shape+location)"
+"Martinez, Justin",FS,173,0.0634241164019484,0.50885753615298,"Residual overperformers
+(top 15% after shape+location)"
+"DeSclafani, Anthony",FS,61,0.0630655026297708,0.00336891233467342,"Residual overperformers
+(top 15% after shape+location)"
+"Gaddis, Hunter",CH,161,0.0629153858759327,0.411823019298321,"Residual overperformers
+(top 15% after shape+location)"
+"Petty, Chase",CH,41,0.0623975850912592,0.331417079294593,"Residual overperformers
+(top 15% after shape+location)"
+"Williamson, Brandon",CH,170,0.0621685359330127,0.595659505934383,"Residual overperformers
+(top 15% after shape+location)"
+"Eisert, Brandon",CH,221,0.0620714526381534,0.555435771965237,"Residual overperformers
+(top 15% after shape+location)"
+"Matsui, Yuki",FS,393,0.0612409507644691,0.00555225511905708,"Residual overperformers
+(top 15% after shape+location)"
+"Cruz, Fernando",FS,790,0.0599210188512372,0.000102748840181626,"Residual overperformers
+(top 15% after shape+location)"
+"Raley, Brooks",CH,86,0.0598593783554372,0.208244430066323,"Residual overperformers
+(top 15% after shape+location)"
+"Leclerc, José",CH,101,0.0595632935167701,0.821655104672323,"Residual overperformers
+(top 15% after shape+location)"
+"Davies, Zach",CH,65,0.0595430734839025,0.729814339914059,"Residual overperformers
+(top 15% after shape+location)"
+"Neal, Zach",CH,52,0.0590631090741167,0.275306913651487,"Residual overperformers
+(top 15% after shape+location)"
+"Martinez, Seth",CH,54,0.0586081149245419,0.796736248897178,"Residual overperformers
+(top 15% after shape+location)"
+"Myers, Tobias",CH,103,0.0576886826905899,0.812445031030677,"Residual overperformers
+(top 15% after shape+location)"
+"Alexander, Scott",CH,72,0.057333738997821,0.721417425123587,"Residual overperformers
+(top 15% after shape+location)"
+"Urías, Julio",CH,75,0.0571700365484026,0.266388414426536,"Residual overperformers
+(top 15% after shape+location)"
+"Robertson, Nick",CH,53,0.0567782454355123,0.555141360144451,"Residual overperformers
+(top 15% after shape+location)"
+"Rutledge, Jackson",FS,58,0.0565642180081206,0.677583289658252,"Residual overperformers
+(top 15% after shape+location)"
+"Imanaga, Shota",FS,1242,0.0560544379660817,0.624864155049145,"Residual overperformers
+(top 15% after shape+location)"
+"Weaver, Luke",CH,551,0.0557197956851917,0.27524275488154,"Residual overperformers
+(top 15% after shape+location)"
+"Domínguez, Seranthony",FS,126,0.055225261840615,0.0940339509793195,"Residual overperformers
+(top 15% after shape+location)"
+"Keller, Brad",CH,134,0.0546610689857564,0.599646087345544,"Residual overperformers
+(top 15% after shape+location)"
+"Iglesias, Raisel",CH,562,0.0545167825086458,0.790445562046937,"Residual overperformers
+(top 15% after shape+location)"
+"Fulmer, Carson",CH,301,0.0536280360386664,0.633962490198381,"Residual overperformers
+(top 15% after shape+location)"
+"Gordon, Colton",CH,73,0.0532475168324369,0.562493504129034,"Residual overperformers
+(top 15% after shape+location)"
+"Zerpa, Angel",CH,122,0.0515178299785995,0.704925346015149,"Residual overperformers
+(top 15% after shape+location)"
+"Strickland, Hunter",CH,47,0.0514575766707664,0.295953797497781,"Residual overperformers
+(top 15% after shape+location)"
+"Henriquez, Ronny",CH,123,0.050725428797618,0.371128229601878,"Residual overperformers
+(top 15% after shape+location)"
+"Castro, Miguel",CH,68,0.0499723099206727,0.818846657835899,"Residual overperformers
+(top 15% after shape+location)"
+"Schwellenbach, Spencer",FS,250,0.0498350057231483,0.44480565164656,All other offspeed
+"Waldrep, Hurston",FS,172,0.0497613266377784,0.353275797987325,All other offspeed
+"Montero, Rafael",FS,251,0.0496802296824285,0.245462356450678,All other offspeed
+"Eovaldi, Nathan",FS,1245,0.0489771449924301,0.340364587477633,All other offspeed
+"Johnson, Ryan",FS,108,0.0487925430236274,0.297131613196066,All other offspeed
+"Wheeler, Zack",FS,375,0.0487918031602392,0.771474999189503,All other offspeed
+"Brito, Jhony",CH,211,0.0487388500672046,0.73472259476925,All other offspeed
+"Ramirez, Emmanuel",FS,68,0.0475960269697998,0.00707250183768797,All other offspeed
+"Gibson, Kyle",CH,257,0.0467980612681318,0.49790893048938,All other offspeed
+"Povich, Cade",CH,221,0.0467046295543184,0.379157605354132,All other offspeed
+"Lee, Dylan",CH,183,0.0466592942042191,0.865580518646427,All other offspeed
+"Seymour, Ian",CH,361,0.0459943271271973,0.732398460538139,All other offspeed
+"Kahnle, Tommy",CH,862,0.044275735487002,0.288967710409773,All other offspeed
+"Winn, Cole",FS,102,0.0439564051317203,0.581033075538134,All other offspeed
+"Thorpe, Drew",CH,137,0.0435283209281403,0.512163169560942,All other offspeed
+"Ober, Bailey",CH,1256,0.0424860617653579,0.235377587426743,All other offspeed
+"Jackson, Andre",CH,107,0.0422610810963192,0.332856031125713,All other offspeed
+"Cantillo, Joey",CH,567,0.0421067009348902,0.747110173399046,All other offspeed
+"Hart, Kyle",CH,44,0.041997519119451,0.218563439255761,All other offspeed
+"Stone, Gavin",CH,346,0.0418101557805254,0.616501664584579,All other offspeed
+"Parker, Mitchell",FS,394,0.0415023051326118,0.24787314927975,All other offspeed
+"deGrom, Jacob",CH,247,0.041424021005026,0.72256303898588,All other offspeed
+"Brown, Ben",CH,61,0.0412680755167199,0.551661413644827,All other offspeed
+"McCullers Jr., Lance",CH,124,0.0412099632077045,0.269533805684201,All other offspeed
+"Loáisiga, Jonathan",CH,163,0.0408504284103542,0.482058783352332,All other offspeed
+"Miller, Shelby",FS,209,0.0391062633962996,0.338476040630845,All other offspeed
+"Morton, Charlie",CH,335,0.039064780559609,0.303510521229612,All other offspeed
+"Griffin, Foster",CH,87,0.0390428438784984,0.823093725774358,All other offspeed
+"Painter, Andrew",FS,84,0.0378771070278492,0.0932596942532022,All other offspeed
+"Pilkington, Konnor",CH,44,0.0374086045765036,0.46387716226199,All other offspeed
+"Romero, JoJo",CH,292,0.0373982265248697,0.270828812311417,All other offspeed
+"Buttó, José",CH,271,0.0371647013230415,0.312848440869362,All other offspeed
+"Crochet, Garrett",CH,119,0.0369295508048144,0.388267931880562,All other offspeed
+"Montgomery, Jordan",CH,313,0.0365948310997972,0.0509363748038109,All other offspeed
+"Holman, Grant",FS,127,0.0365567684298453,0.170196613026043,All other offspeed
+"Farris, Mitch",CH,133,0.0364820277286543,0.273740181901939,All other offspeed
+"Valdez, Framber",CH,800,0.0362286340615829,0.867860976065085,All other offspeed
+"Madden, Ty",FS,53,0.0351854609549075,0.511985444635024,All other offspeed
+"De los Santos, Yerry",CH,122,0.0349558842105253,0.461520994551694,All other offspeed
+"Banda, Anthony",CH,83,0.0344036621769599,0.618868529107509,All other offspeed
+"Peralta, Sammy",CH,77,0.0341699185399532,0.336930162885467,All other offspeed
+"Rodriguez, Bradgley",CH,189,0.0340894460658234,0.516480017303634,All other offspeed
+"Rodríguez, Joely",CH,51,0.0338455255090237,0.482448825727136,All other offspeed
+"Ortiz, Luis",CH,141,0.0338304417099431,0.593002930715824,All other offspeed
+"García, Yimi",CH,52,0.0336598503692224,0.300506802548747,All other offspeed
+"Montero, Keider",CH,275,0.0335316494217045,0.827952573640597,All other offspeed
+"Lyles, Jordan",CH,84,0.0334705931123893,0.6727163800618,All other offspeed
+"Estrada, Jeremiah",FS,270,0.0331493917633843,0.410125708604127,All other offspeed
+"Farmer, Buck",CH,172,0.0328023365170113,0.251082513880801,All other offspeed
+"Boushley, Caleb",CH,49,0.0326232695944217,0.477933805269193,All other offspeed
+"Neris, Héctor",FS,389,0.0325827229956617,0.0155890626644112,All other offspeed
+"Burnes, Corbin",CH,236,0.031187695412672,0.763367251499128,All other offspeed
+"Arrighetti, Spencer",CH,161,0.0310940182225375,0.812306969593714,All other offspeed
+"Manoah, Alek",CH,88,0.0305976144394719,0.706945851948757,All other offspeed
+"Yarbrough, Ryan",CH,391,0.0304183664393403,0.486409432725632,All other offspeed
+"Cabrera, Edward",CH,869,0.0304105929381995,0.902250304680323,All other offspeed
+"Smith, Drew",CH,45,0.0301536418791879,0.338571197266606,All other offspeed
+"Yoho, Craig",CH,113,0.0301508163118889,0.0742114897674524,All other offspeed
+"Hurt, Kyle",CH,103,0.0299770024204686,0.401782688473158,All other offspeed
+"Lorenzen, Michael",CH,702,0.028840151590977,0.82160418916516,All other offspeed
+"Richards, Trevor",CH,488,0.0283545473955354,7.061804321376e-06,All other offspeed
+"Hoglund, Gunnar",CH,56,0.0283129645823105,0.307784849563336,All other offspeed
+"Hoeing, Bryan",FS,126,0.0281895519200797,0.108390439215049,All other offspeed
+"Sandoval, Patrick",CH,371,0.0280879865103556,0.423631370866246,All other offspeed
+"Loup, Aaron",CH,41,0.0275262546668013,0.421488664168547,All other offspeed
+"Tate, Dillon",CH,41,0.0271121568770983,0.352199359524465,All other offspeed
+"Mantiply, Joe",CH,235,0.0270302353167997,0.348191841562966,All other offspeed
+"Brazobán, Huascar",CH,542,0.0270240216375801,0.391167254922066,All other offspeed
+"Hoffmann, Andrew",CH,76,0.0269736696811244,0.418435418669539,All other offspeed
+"Kremer, Dean",FS,593,0.0268572578799151,0.836803521652176,All other offspeed
+"Whisenhunt, Carson",CH,138,0.0262280664046066,0.465014393046359,All other offspeed
+"Kochanowicz, Jack",CH,296,0.0261794014127952,0.0233084173947488,All other offspeed
+"Guenther, Sean",FS,56,0.0261690460257079,0.0118773412606387,All other offspeed
+"Ragans, Cole",CH,721,0.0259936132759578,0.86830330737394,All other offspeed
+"Henderson, Logan",CH,197,0.025612534293406,0.398380402771944,All other offspeed
+"Bednar, David",FS,495,0.0254477262114679,0.00138914816969023,All other offspeed
+"Mize, Casey",FS,687,0.0253297578273634,0.548222994211848,All other offspeed
+"Norris, Daniel",CH,46,0.0253099992783128,0.0430858103528929,All other offspeed
+"Morejon, Adrian",CH,153,0.0251538887142629,0.409647975262555,All other offspeed
+"Gray, Sonny",CH,204,0.0246845646082821,0.0499336892011022,All other offspeed
+"Winder, Josh",CH,64,0.0245036227889218,0.698381097203354,All other offspeed
+"Peralta, Freddy",CH,856,0.0244409084652215,0.475505926225922,All other offspeed
+"Ashby, Aaron",CH,180,0.0241934337168731,0.745966734368527,All other offspeed
+"Olson, Reese",CH,424,0.0237000552550323,0.0816724617857209,All other offspeed
+"Toussaint, Touki",FS,203,0.0236153962650632,0.927619894305952,All other offspeed
+"King, Michael",CH,928,0.0231695379421964,0.102607575310897,All other offspeed
+"Sale, Chris",CH,434,0.0229945984517374,0.708697198921876,All other offspeed
+"Canning, Griffin",CH,821,0.0226120011670783,0.453472684312082,All other offspeed
+"Avila, Luinder",CH,54,0.021853341636738,0.155772277230276,All other offspeed
+"Bradley, Taj",FS,704,0.0217383116978681,0.247664917391668,All other offspeed
+"Wentz, Joey",CH,180,0.0216672347952767,0.763011409886017,All other offspeed
+"Abel, Mick",CH,58,0.0216401593822856,0.0442433853001806,All other offspeed
+"Flexen, Chris",CH,275,0.0215987769674092,0.465727323544058,All other offspeed
+"Williams, Devin",CH,697,0.0215410676820115,0.164930851786047,All other offspeed
+"Latz, Jacob",CH,350,0.0214719298301797,0.723525219895965,All other offspeed
+"Berríos, José",CH,603,0.0210630761299373,0.488004497610647,All other offspeed
+"Yamamoto, Yoshinobu",FS,808,0.0208878844260249,0.131886797898318,All other offspeed
+"Birdsong, Hayden",CH,187,0.0208059308244445,0.257315320444982,All other offspeed
+"Lynch IV, Daniel",CH,251,0.0206161571627092,0.74482818556431,All other offspeed
+"Skubal, Tarik",CH,1330,0.020391517200834,0.154262073898039,All other offspeed
+"Moll, Sam",CH,89,0.0197280121900907,0.0929669217119424,All other offspeed
+"Englert, Mason",CH,268,0.0196282104286228,0.000206982879359492,All other offspeed
+"Suárez, Andrew",CH,42,0.0196227245072749,0.819444928235419,All other offspeed
+"Springs, Jeffrey",CH,732,0.0192419339809475,0.741519763288309,All other offspeed
+"Luzardo, Jesús",CH,760,0.018832632280041,0.805649699228875,All other offspeed
+"Orze, Eric",FS,331,0.0187849107347117,0.00218125941599812,All other offspeed
+"McFarland, T.J.",CH,69,0.0182299191958323,0.778929120692361,All other offspeed
+"McClanahan, Shane",CH,271,0.0181553794776968,0.608572922553783,All other offspeed
+"Erceg, Lucas",CH,277,0.01787964175244,0.821621060159242,All other offspeed
+"Javier, Cristian",CH,213,0.0172467721204926,0.0989972163766954,All other offspeed
+"Lange, Alex",CH,113,0.0170534350462087,0.698233753809593,All other offspeed
+"Kelly, Kevin",CH,93,0.0169790642398351,0.57534404842056,All other offspeed
+"Ogasawara, Shinnosuke",CH,77,0.0167168827541443,0.692469296746606,All other offspeed
+"Gillispie, Connor",CH,49,0.0166462448252036,0.348869151819512,All other offspeed
+"Garrett, Reed",FS,240,0.0166326949523562,0.387172904070607,All other offspeed
+"Hurter, Brant",CH,107,0.0163761332302705,0.0589128108628783,All other offspeed
+"Smith, Shane",CH,211,0.0160896409406896,0.597591254060858,All other offspeed
+"Reid-Foley, Sean",CH,53,0.0159935210904702,0.0978221850393932,All other offspeed
+"Soriano, José",FS,398,0.0154759951221247,0.828770978262548,All other offspeed
+"Pagán, Emilio",FS,208,0.0151033525478773,0.29400635140052,All other offspeed
+"Cano, Yennier",FS,108,0.0150403387649668,0.640666470828871,All other offspeed
+"Scott, Tayler",FS,207,0.0147415466722766,0.0426126099051098,All other offspeed
+"Abbott, Andrew",CH,706,0.0147384526509834,0.849013467628685,All other offspeed
+"Herget, Jimmy",CH,56,0.0142361957424352,0.611376221055587,All other offspeed
+"Garcia, Robert",CH,377,0.014222948379723,0.843411218912438,All other offspeed
+"Darvish, Yu",FS,113,0.0141578285734067,6.12564357712033e-05,All other offspeed
+"Hoffman, Jeff",FS,358,0.0141401759321108,0.659112036052433,All other offspeed
+"Bello, Brayan",CH,857,0.0141224585186694,0.139818800571183,All other offspeed
+"Rodón, Carlos",CH,553,0.0136708072485284,0.0325214145625908,All other offspeed
+"Minter, A.J.",CH,95,0.0135561296489993,0.403804339576909,All other offspeed
+"Cano, Yennier",CH,268,0.0132753411957924,0.368179493797065,All other offspeed
+"Halvorsen, Seth",FS,133,0.0132683364002181,0.555434588379519,All other offspeed
+"Leahy, Kyle",CH,207,0.0129968406347407,0.289575280113455,All other offspeed
+"Pressly, Ryan",CH,77,0.0127010991188772,0.155780608850156,All other offspeed
+"Taillon, Jameson",CH,306,0.0126750716333119,0.54245696182459,All other offspeed
+"Irvin, Jake",CH,202,0.0124362122795151,0.690710107427049,All other offspeed
+"Martinez, Nick",CH,851,0.0122802471300831,0.175821565093946,All other offspeed
+"Skenes, Paul",CH,379,0.0121593463999677,0.690775763641975,All other offspeed
+"Santana, Dennis",CH,128,0.0121430655837264,0.711225726733283,All other offspeed
+"Junis, Jakob",CH,249,0.0120855934290694,0.736838865068944,All other offspeed
+"Stratton, Chris",CH,116,0.0118925039910585,0.741037468213543,All other offspeed
+"Anderson, Shaun",CH,71,0.0117278755268239,0.293077400530678,All other offspeed
+"Duran, Jhoan",FS,614,0.0115696227606364,0.262331529525145,All other offspeed
+"Jacob, Alek",CH,129,0.0115543553011185,0.325499586077828,All other offspeed
+"Vodnik, Victor",CH,272,0.011550248691554,0.505291184406344,All other offspeed
+"Kelly, Merrill",CH,983,0.0115172156622943,0.694711405357409,All other offspeed
+"Ottavino, Adam",CH,61,0.0110693186265585,0.66742706098943,All other offspeed
+"Weissert, Greg",CH,136,0.0110593262009733,0.00813286512663646,All other offspeed
+"Knack, Landon",CH,164,0.0110182229321006,0.608824573335142,All other offspeed
+"Sánchez, Cristopher",CH,1732,0.0108268339291733,0.561964158123191,All other offspeed
+"Swanson, Erik",FS,255,0.0103722769284434,0.489017205361956,All other offspeed
+"Woodruff, Brandon",CH,249,0.0100529439683086,0.717679620060492,All other offspeed
+"Snell, Blake",CH,424,0.00931846106152378,0.538285147222791,All other offspeed
+"Hart, Kyle",FS,82,0.00929586752283184,0.0100562506251166,All other offspeed
+"Hendricks, Kyle",CH,1290,0.00884068501953998,0.255534720563521,All other offspeed
+"Pérez, Eury",CH,119,0.00882784198465731,0.823443479911095,All other offspeed
+"Fujinami, Shintaro",FS,67,0.00875885983954553,0.334931438783955,All other offspeed
+"Teng, Kai-Wei",CH,80,0.0086179817276439,0.654201408753108,All other offspeed
+"Lopez, Jacob",CH,175,0.00812421316087793,0.778437009496735,All other offspeed
+"Bennett, Jake",CH,131,0.00787744188519796,0.773294319671786,All other offspeed
+"Aldegheri, Sam",CH,155,0.00768814781599943,0.222369305152467,All other offspeed
+"Brown, Hunter",CH,360,0.00723175858830317,0.710010852851947,All other offspeed
+"Estévez, Carlos",CH,137,0.00658357537966443,0.284856390739747,All other offspeed
+"De Los Santos, Enyel",CH,258,0.0065106978969162,0.641957915996734,All other offspeed
+"Maeda, Kenta",FS,504,0.0064866052032713,0.422193081168156,All other offspeed
+"Spiers, Carson",CH,126,0.00640123687736749,0.199655641067837,All other offspeed
+"Ferrer, José A.",CH,289,0.00603261934933681,0.722783019524223,All other offspeed
+"Pérez, Martín",CH,684,0.00589866292190416,0.878908338379469,All other offspeed
+"Adams, Travis",CH,123,0.00567834711709444,0.563495439091801,All other offspeed
+"Blanco, Ronel",CH,366,0.00565744852529401,0.567894026499892,All other offspeed
+"Cameron, Noah",CH,387,0.00563139280263174,0.404648611085965,All other offspeed
+"Ureña, Walbert",CH,243,0.0054624854695037,0.804711830884465,All other offspeed
+"Boyle, Joe",FS,79,0.00508537304999374,0.301293805134589,All other offspeed
+"Diekman, Jake",CH,57,0.0048817851334408,0.915560741907028,All other offspeed
+"Buehler, Walker",CH,167,0.00472818751655866,0.553752673253169,All other offspeed
+"Agnos, Zach",FS,119,0.00460408949185021,0.370400333936559,All other offspeed
+"Bellozo, Valente",CH,150,0.00450855852497619,0.482266591973053,All other offspeed
+"Nola, Aaron",CH,466,0.00442499755132354,0.602306635735231,All other offspeed
+"Crawford, Kutter",FS,153,0.00434648652698552,0.0015155074743791,All other offspeed
+"Evans, Logan",CH,72,0.00396782743676132,0.857477607159932,All other offspeed
+"Meyer, Max",CH,220,0.0037853853283059,0.587092263445911,All other offspeed
+"Wells, Tyler",CH,201,0.00303632208271402,0.821063716860752,All other offspeed
+"Myers, Tobias",FS,151,0.00297029322506161,0.218194884391063,All other offspeed
+"Gilbert, Logan",FS,642,0.00274837420891723,0.0166649549863777,All other offspeed
+"Finnegan, Kyle",FS,499,0.0024425365928233,0.477948201158798,All other offspeed
+"Blalock, Bradley",FS,117,0.00234889896122596,0.553247860652568,All other offspeed
+"Stewart, Brock",CH,44,0.00230123159639834,0.20975318441764,All other offspeed
+"Lawrence, Casey",CH,59,0.00228011897667145,0.456961600826824,All other offspeed
+"Poulin, PJ",CH,71,0.00212002065398412,0.689288305421071,All other offspeed
+"Suter, Brent",CH,407,0.00211242607614168,0.0552446797756111,All other offspeed
+"Bibee, Tanner",CH,679,0.00189031294478243,0.682924196736341,All other offspeed
+"McDonald, Trevor",CH,94,0.0017268048241697,0.919554486712213,All other offspeed
+"Hill, Jaden",CH,130,0.00145836101202255,0.438875207141725,All other offspeed
+"Houck, Tanner",FS,463,0.00118853184408342,0.616329736776354,All other offspeed
+"Bieber, Shane",CH,90,0.00113621756519869,0.373645972974323,All other offspeed
+"Anderson, Tyler",CH,1113,0.00106404346593223,0.742375100334813,All other offspeed
+"Stroman, Marcus",FS,184,0.000443764343744728,0.104116641354863,All other offspeed
+"Leiter, Jack",CH,313,0.000316658179268981,0.0821226592954289,All other offspeed
+"Ray, Robbie",CH,353,0.000236970530542935,0.933933510570054,All other offspeed
+"Bachar, Lake",FS,118,0.000172215868000052,0.485862039197256,All other offspeed
+"Cortes, Nestor",CH,171,-1.12014806867571e-05,0.454013887590447,All other offspeed
+"Muñoz, Roddery",CH,71,-9.44629469453224e-05,0.742971521277491,All other offspeed
+"Soriano, George",CH,310,-0.000671944475584575,0.247842386277914,All other offspeed
+"Bowlan, Jonathan",CH,75,-0.000739923030047106,0.00198301151084993,All other offspeed
+"Ramirez, Nick",CH,93,-0.000847823420790618,0.575123106740463,All other offspeed
+"Mahle, Tyler",FS,475,-0.000999706953475422,0.444135013486414,All other offspeed
+"Greinke, Zack",CH,68,-0.00100962899353835,0.420902365300421,All other offspeed
+"Garrett, Braxton",CH,86,-0.00146329725514002,0.488477607370829,All other offspeed
+"Mlodzinski, Carmen",FS,331,-0.0015693445318829,0.000405670321340233,All other offspeed
+"Sears, JP",CH,560,-0.00185827271783685,0.639767659880393,All other offspeed
+"Urquidy, José",CH,70,-0.00195047247669294,0.574716063037361,All other offspeed
+"Gómez, Yoendrys",CH,61,-0.00199742685393207,0.426162577191798,All other offspeed
+"Harrison, Kyle",CH,333,-0.00217085523392131,0.567098733343069,All other offspeed
+"Milner, Hoby",CH,239,-0.00243105718278897,0.866847885209613,All other offspeed
+"Morales, Luis",CH,55,-0.00243513683788359,0.770587658803677,All other offspeed
+"Boyd, Matthew",CH,608,-0.00278215496787089,0.79650700774923,All other offspeed
+"Misiorowski, Jacob",CH,45,-0.00279585052879419,0.311699941274548,All other offspeed
+"Holmes, Clay",CH,298,-0.00315670881490622,0.396921913042091,All other offspeed
+"Carrasco, Carlos",CH,417,-0.00361930429052553,0.117499015708376,All other offspeed
+"Lowder, Rhett",CH,160,-0.00441653418085794,0.612415651524653,All other offspeed
+"Gonzales, Marco",CH,81,-0.00467933863897528,0.546004192975385,All other offspeed
+"Smith, Cade",FS,341,-0.00478817561276317,0.111589833164086,All other offspeed
+"Moore, Matt",CH,209,-0.00505365726329581,0.590112652888521,All other offspeed
+"Yates, Kirby",FS,503,-0.00511763997434465,0.574921041694907,All other offspeed
+"Baz, Shane",CH,275,-0.00596426590823692,0.821917085393571,All other offspeed
+"Estes, Joey",CH,122,-0.00666169342173287,0.506044118837002,All other offspeed
+"Chandler, Bubba",CH,180,-0.00690024920452522,0.741410098296007,All other offspeed
+"Megill, Tylor",CH,89,-0.00701720843183118,0.769596153509721,All other offspeed
+"Strider, Spencer",CH,101,-0.00728176699664575,0.370610600320434,All other offspeed
+"Syndergaard, Noah",CH,58,-0.00734486043444656,0.260942486318412,All other offspeed
+"Chapman, Aroldis",FS,176,-0.00734654787668568,6.25107196209621e-11,All other offspeed
+"Sugano, Tomoyuki",FS,433,-0.00755685077648011,0.513144974363387,All other offspeed
+"Kriske, Brooks",FS,91,-0.00770840211164767,3.88825725579271e-09,All other offspeed
+"McGreevy, Michael",CH,259,-0.00812959604586898,0.225318496389918,All other offspeed
+"Lodolo, Nick",CH,594,-0.00817316691454919,0.891594581066381,All other offspeed
+"Machado, Andrés",CH,77,-0.0085524850418894,0.552568152306433,All other offspeed
+"Wacha, Michael",CH,1274,-0.00855254209130913,0.0179472229338733,All other offspeed
+"Gausman, Kevin",FS,1659,-0.00870914199682575,0.274274854366912,All other offspeed
+"Skenes, Paul",FS,668,-0.00895511458306947,0.620139265400112,All other offspeed
+"Verlander, Justin",CH,216,-0.0092609978583397,0.741097488938432,All other offspeed
+"Rocker, Kumar",CH,73,-0.00928400880672104,0.412963073533616,All other offspeed
+"Pfaadt, Brandon",CH,515,-0.0104125569024373,0.28931395611918,All other offspeed
+"Sheehan, Emmet",CH,291,-0.0107636465313166,0.194645943546734,All other offspeed
+"Weathers, Ryan",CH,564,-0.0107679623406993,0.101147654422285,All other offspeed
+"Holton, Tyler",CH,361,-0.011114032714611,0.12870791546332,All other offspeed
+"Martinez, Adrián",CH,72,-0.0113070796776524,0.000861530841322036,All other offspeed
+"Winn, Keaton",FS,411,-0.0115337499435502,0.552538763345963,All other offspeed
+"Burke, Sean",CH,79,-0.0116260412583956,0.195993049119534,All other offspeed
+"Anderson, Drew",CH,168,-0.0118589600166044,0.0215724473490784,All other offspeed
+"Smith, Will",CH,48,-0.0119213271636615,0.939322190774628,All other offspeed
+"Chirinos, Yonny",FS,128,-0.0126405788271874,4.38489723267006e-05,All other offspeed
+"Clevinger, Mike",CH,126,-0.0127461736568247,0.663239303755525,All other offspeed
+"Messick, Parker",CH,318,-0.0131804455849996,0.0565983626697479,All other offspeed
+"López, Jorge",CH,94,-0.0136798306136134,0.663597586976826,All other offspeed
+"Fried, Max",CH,477,-0.0140136698998388,0.307671636561817,All other offspeed
+"Ryan, Joe",FS,587,-0.0141081041297111,0.120690945084173,All other offspeed
+"Hall, DL",CH,180,-0.0142256773184437,0.299546846391996,All other offspeed
+"Heaney, Andrew",CH,540,-0.0143041348413557,0.900684463831726,All other offspeed
+"Kirby, George",FS,251,-0.014452763689986,0.375408955992098,All other offspeed
+"Cobb, Alex",FS,284,-0.0147868953654315,0.466658334179557,All other offspeed
+"Criswell, Cooper",CH,383,-0.0147944381900425,0.572543680503746,All other offspeed
+"Kuhl, Chad",CH,56,-0.0149412348558741,0.748339510054184,All other offspeed
+"McLean, Nolan",CH,104,-0.0150278474811736,0.332950744642781,All other offspeed
+"Akin, Keegan",CH,232,-0.015099650618975,0.716400767667951,All other offspeed
+"Adon, Joan",CH,71,-0.0154277588519273,0.391588489699409,All other offspeed
+"Suarez, Ranger",CH,642,-0.0155118872908716,0.459886977693322,All other offspeed
+"Lugo, Seth",CH,326,-0.0156077066012413,0.660943389055017,All other offspeed
+"Webb, Logan",CH,1598,-0.0159877183645786,0.522682704436815,All other offspeed
+"Hicks, Jordan",FS,225,-0.0161744143510077,0.149934229067696,All other offspeed
+"Funderburk, Kody",CH,64,-0.0162026512559637,0.499017432856576,All other offspeed
+"Gallen, Zac",CH,652,-0.0163139496504731,0.760368747740006,All other offspeed
+"Floro, Dylan",CH,73,-0.0163724921968421,0.283843346396105,All other offspeed
+"Sproat, Brandon",CH,82,-0.0164630786461985,0.45136375166835,All other offspeed
+"De Jesus, Enmanuel",CH,48,-0.0165034563334617,0.503300844065584,All other offspeed
+"Stanek, Ryne",FS,236,-0.0165948186869502,0.457484292969072,All other offspeed
+"Burke, Brock",CH,270,-0.0169144615784475,0.158252504198404,All other offspeed
+"Rea, Colin",CH,448,-0.0171770285706821,0.424728913496894,All other offspeed
+"Kelly, Zack",CH,116,-0.0171893924648262,0.31141453277772,All other offspeed
+"Bernardino, Brennan",CH,74,-0.0176167510313647,0.151446938446293,All other offspeed
+"Castillo, Luis",CH,593,-0.0177394251551981,0.724887134402823,All other offspeed
+"Topa, Justin",CH,123,-0.0180677676553806,0.483619203702372,All other offspeed
+"Shuster, Jared",CH,239,-0.0192251010608944,0.639854687880758,All other offspeed
+"Imanaga, Shota",CH,52,-0.0201982441210743,0.246983891622516,All other offspeed
+"Blewett, Scott",FS,109,-0.0204384329416867,0.0121895610663801,All other offspeed
+"Gray, Peyton",CH,150,-0.0210517032121902,0.617212090043178,All other offspeed
+"Avila, Pedro",CH,299,-0.021141463752571,1.93288992261545e-12,All other offspeed
+"Wood, Alex",CH,223,-0.0213028213744498,0.588999595488689,All other offspeed
+"May, Trevor",CH,50,-0.0217040790880811,0.448017534189268,All other offspeed
+"Wilson, Steven",CH,56,-0.0219358278594605,0.396448708485638,All other offspeed
+"López, Pablo",CH,589,-0.0220321750261153,0.350726450263083,All other offspeed
+"Graveman, Kendall",CH,55,-0.0221260463541545,0.788736268723914,All other offspeed
+"Enns, Dietrich",CH,135,-0.0222424947756269,0.412929942841127,All other offspeed
+"Suarez, José",CH,312,-0.0224776050949538,0.582076964024039,All other offspeed
+"Houser, Adrian",CH,341,-0.0230039120827227,0.629857364661463,All other offspeed
+"González, Victor",CH,51,-0.0235950955685811,0.901972709234014,All other offspeed
+"Williams, Trevor",CH,222,-0.0240937537971461,0.00914611093043667,All other offspeed
+"Detmers, Reid",CH,263,-0.024163108118481,0.714842712666127,All other offspeed
+"Bivens, Spencer",CH,146,-0.0242407880842718,0.02624669865247,All other offspeed
+"Montero, Rafael",CH,133,-0.0242836586350358,0.833432514345816,All other offspeed
+"Cavalli, Cade",CH,122,-0.0245939039243178,0.129499111798602,All other offspeed
+"Pepiot, Ryan",CH,721,-0.0246269814554606,0.0421782359117052,All other offspeed
+"Wicks, Jordan",CH,250,-0.0248896840112722,0.318857154794817,All other offspeed
+"Morillo, Juan",CH,107,-0.0250270701299564,0.424796836840966,All other offspeed
+"France, J.P.",CH,122,-0.025442014683191,0.036991111644947,All other offspeed
+"Dollander, Chase",CH,94,-0.0256533228721209,0.791469347099435,All other offspeed
+"Freeland, Kyle",CH,321,-0.026005322973537,0.412375131627319,All other offspeed
+"Suarez, Robert",CH,319,-0.0263364360063811,0.690540802102111,All other offspeed
+"Ohl, Pierson",CH,125,-0.0264299851011619,0.0330388543372764,All other offspeed
+"Miller, Bryce",FS,545,-0.0264847839982356,0.00663809099199779,All other offspeed
+"Cueto, Johnny",CH,110,-0.0265282123092534,0.155384385515768,All other offspeed
+"Bradford, Cody",CH,207,-0.0265960075368467,0.708627401490317,All other offspeed
+"Peterson, David",CH,527,-0.0266617815386435,0.087703853274692,All other offspeed
+"Rogers, Trevor",CH,741,-0.0268076600126082,0.833841350910506,All other offspeed
+"Littell, Zack",FS,984,-0.0270536982256014,0.0126216135830505,All other offspeed
+"Contreras, Roansy",CH,60,-0.0271559203667395,0.458981338496071,All other offspeed
+"Manaea, Sean",CH,301,-0.0272372963405484,0.734301463339217,All other offspeed
+"Gil, Luis",CH,375,-0.0274717845293966,0.564872162879618,All other offspeed
+"Quintana, Jose",CH,571,-0.0275596731317258,0.456409396930154,All other offspeed
+"Bachman, Sam",CH,58,-0.0277194417206729,0.250895398442484,All other offspeed
+"Gasser, Robert",CH,62,-0.0277589561930541,0.530443486690325,All other offspeed
+"Roupp, Landen",CH,410,-0.0278824019586504,0.707219604904146,All other offspeed
+"Miller, Bobby",CH,166,-0.0279204297944879,0.616307211781629,All other offspeed
+"Kikuchi, Yusei",CH,321,-0.0281793573895567,0.952763334282206,All other offspeed
+"Warren, Will",CH,223,-0.0283844192889818,0.319559261698412,All other offspeed
+"Paredes, Mike",CH,69,-0.0284762156867002,0.59385693950622,All other offspeed
+"Ritchie, JR",CH,83,-0.0285606650223267,0.821485443505413,All other offspeed
+"Gusto, Ryan",CH,129,-0.0286322270806338,0.334596766583558,All other offspeed
+"Howard, Spencer",CH,40,-0.0286770635672301,0.759028175194187,All other offspeed
+"Montas, Frankie",FS,277,-0.0287938569683777,0.775520047919944,All other offspeed
+"Hatch, Thomas",CH,101,-0.0288557008337514,0.384548357650833,All other offspeed
+"Rangel, Alan",CH,115,-0.0289165321407885,0.605561502666716,All other offspeed
+"Anderson, Chase",CH,206,-0.0291212086854166,0.410274539199715,All other offspeed
+"Vines, Darius",CH,88,-0.0296069400289674,0.791565989054709,All other offspeed
+"Dubin, Shawn",CH,88,-0.0296913368151402,0.556860972620575,All other offspeed
+"Rasmussen, Drew",CH,107,-0.0303921170732485,0.0300741582606059,All other offspeed
+"Kirby, George",CH,78,-0.0310833192418198,0.476623945155533,All other offspeed
+"Beede, Tyler",FS,46,-0.0319528888528663,0.79456976853785,All other offspeed
+"Payamps, Joel",CH,62,-0.0320021406464322,0.77538924884827,All other offspeed
+"Gray, Jon",CH,118,-0.0321104896159326,0.744125705810763,All other offspeed
+"Ureña, José",CH,319,-0.0324279173574343,0.964291659973131,All other offspeed
+"Yesavage, Trey",FS,221,-0.0329118034867854,0.237996042519232,All other offspeed
+"Paxton, James",CH,66,-0.0334966266254612,0.468466629016688,All other offspeed
+"Peralta, Wandy",CH,561,-0.0336087691591844,0.276365694326833,All other offspeed
+"Brubaker, JT",CH,83,-0.034338404947944,0.821551449230527,All other offspeed
+"Corbin, Patrick",CH,259,-0.0350024045811136,0.309387968711767,All other offspeed
+"Herz, DJ",CH,193,-0.0350096271408207,0.359394570954877,All other offspeed
+"Harris, Hogan",CH,191,-0.0355568261984327,0.620409645607172,All other offspeed
+"Megill, Tylor",FS,47,-0.0355584781500666,0.00530620334023448,All other offspeed
+"Cannon, Jonathan",CH,390,-0.0358072523067104,0.20110034820707,All other offspeed
+"Stripling, Ross",CH,250,-0.0358392583357119,0.809848459445238,All other offspeed
+"Woo, Bryan",CH,236,-0.0362858387146232,0.748517478579352,All other offspeed
+"Petersen, Michael",CH,40,-0.0362962437121146,0.560767478808175,All other offspeed
+"Rodriguez, Grayson",CH,466,-0.0363281764837987,0.127853330893731,All other offspeed
+"King, John",CH,298,-0.0363638001194541,0.180844489435057,All other offspeed
+"Blach, Ty",CH,256,-0.0364346926183435,0.728457994853511,All other offspeed
+"Quantrill, Cal",FS,787,-0.0365555449768092,0.621778490201757,All other offspeed
+"Rodriguez, Eduardo",CH,741,-0.0367054844874741,0.600920156582494,All other offspeed
+"Marsh, Alec",CH,188,-0.0368468265410261,0.702477317628294,All other offspeed
+"Richardson, Lyon",CH,174,-0.0370735533560565,0.722432239993347,All other offspeed
+"Burns, Chase",CH,62,-0.0372397602725635,0.516904791116053,All other offspeed
+"Liberatore, Matthew",CH,296,-0.0372801005309177,0.780390330389803,All other offspeed
+"Walker, Taijuan",FS,631,-0.0377555517088477,0.0440972362368787,All other offspeed
+"Morgan, Eli",CH,249,-0.0379102911101122,0.173547058999724,All other offspeed
+"Aguiar, Julian",CH,50,-0.0387566901643308,0.6885774360536,All other offspeed
+"Blubaugh, AJ",CH,164,-0.0387640677331708,0.0413508332115235,All other offspeed
+"Bielak, Brandon",CH,108,-0.0394968172723134,0.369935824658113,All other offspeed
+"Scherzer, Max",CH,232,-0.0401187919475415,0.474291732924709,All other offspeed
+"Priester, Quinn",CH,99,-0.0404572553594464,0.0524349234437474,All other offspeed
+"Nunez, Anthony",CH,76,-0.0406055779025221,0.00758283199123576,All other offspeed
+"Holmes, Grant",CH,49,-0.041132512818883,0.562222272096272,All other offspeed
+"Keller, Mitch",CH,204,-0.0416145259985941,0.417546862534309,All other offspeed
+"Daniel, Davis",CH,61,-0.041620178345118,0.723652624410812,All other offspeed
+"Gage, Matt",CH,53,-0.0417076556030509,0.56852948296178,All other offspeed
+"Alcantara, Sandy",CH,780,-0.0422937837954431,0.79079347386531,All other offspeed
+"Clarke, Taylor",CH,204,-0.0423327562308825,0.594892209843178,All other offspeed
+"Varland, Louis",CH,145,-0.0437515275825493,0.26430301827923,All other offspeed
+"Gordon, Tanner",CH,339,-0.0444979143576773,0.762508484438899,All other offspeed
+"Brogdon, Connor",CH,247,-0.0445052853100631,0.654634419204679,All other offspeed
+"Jarvis, Bryce",CH,97,-0.0445931766158715,0.385949539869239,All other offspeed
+"Schultz, Noah",CH,58,-0.0446309720105667,0.923015592856341,All other offspeed
+"Ross, Joe",CH,90,-0.0451809588220988,0.287743656432938,All other offspeed
+"Bowman, Matt",FS,48,-0.0452326510780075,0.380077382260967,All other offspeed
+"Keuchel, Dallas",CH,136,-0.0453868865473637,0.67595514999974,All other offspeed
+"Bassitt, Chris",CH,157,-0.0455108272566974,0.0667948735124004,All other offspeed
+"Junk, Janson",CH,144,-0.0460276188514841,0.50794266481367,All other offspeed
+"Falter, Bailey",FS,80,-0.0464708534040596,0.709239237573502,All other offspeed
+"Anderson, Grant",CH,54,-0.0466491375044186,0.419184762411444,All other offspeed
+"Singer, Brady",CH,44,-0.0467993690874854,0.401898562499362,All other offspeed
+"Sulser, Cole",CH,256,-0.0472897076167128,0.0979544356884879,All other offspeed
+"Gomber, Austin",CH,415,-0.0477371585948366,0.630314318961153,All other offspeed
+"Hancock, Emerson",CH,291,-0.0484463966453869,0.401725510275186,All other offspeed
+"Ryu, Hyun Jin",CH,100,-0.048502546482697,0.801007806970088,All other offspeed
+"Woods Richardson, Simeon",FS,195,-0.0492487435850142,0.608560798959705,All other offspeed
+"Rosenberg, Kenny",CH,185,-0.0495137936141927,0.855399369779742,All other offspeed
+"Alexander, Tyler",CH,331,-0.0499439596570645,0.674373452743374,All other offspeed
+"Woodford, Jake",FS,92,-0.0505640136611525,0.407973972318025,All other offspeed
+"Jiménez, Joe",CH,40,-0.0506256420570943,0.800722202656919,All other offspeed
+"Giolito, Lucas",CH,621,-0.0511299181233833,0.845302809718421,All other offspeed
+"Young, Brandon",FS,248,-0.0520210585845813,0.0452349679435883,All other offspeed
+"Matz, Steven",CH,439,-0.0521277123867157,0.0445871839129332,All other offspeed
+"Lively, Ben",CH,158,-0.0521854630721905,0.766586066625734,All other offspeed
+"Miller, Erik",CH,266,-0.0524904672449957,0.323314233679213,All other offspeed
+"Dobbins, Hunter",FS,56,-0.0525351912384481,0.380266713896147,All other offspeed
+"Francis, Bowden",FS,257,-0.0527828494428567,0.774018050894287,All other offspeed
+"Smith-Shawver, AJ",FS,134,-0.0529590112781736,0.209691201637476,All other offspeed
+"Sasaki, Roki",FS,238,-0.0540164306988173,0.117908077991363,All other offspeed
+"Lord, Brad",CH,162,-0.0554942827130643,0.856331002628773,All other offspeed
+"Martin, Chris",FS,144,-0.05557906811425,0.088688007096798,All other offspeed
+"Early, Connelly",CH,187,-0.0563628359740461,0.262982654133141,All other offspeed
+"Mattson, Isaac",CH,81,-0.0571284008742628,0.687369021772059,All other offspeed
+"Jones, Jared",CH,108,-0.0573823657430064,0.725229809303945,All other offspeed
+"Martin, Davis",CH,517,-0.0579241300334871,0.121405638172574,All other offspeed
+"Allen, Logan",CH,484,-0.0588637511190502,0.482213155977204,All other offspeed
+"Harvey, Hunter",FS,157,-0.059043642377566,0.0505917605684869,All other offspeed
+"Baker, Bryan",CH,315,-0.0593824125300451,0.477831884398087,All other offspeed
+"Kikuchi, Yusei",FS,52,-0.0597977249521265,0.925768693846523,All other offspeed
+"Law, Derek",CH,50,-0.0603650505638985,0.394264027816069,All other offspeed
+"Matthews, Zebby",CH,134,-0.0607088426221589,0.66111791816258,All other offspeed
+"Miley, Wade",CH,123,-0.0607784712774688,0.661893703105672,All other offspeed
+"Vasil, Mike",CH,99,-0.0612590687317673,0.225359679775238,All other offspeed
+"Ohtani, Shohei",FS,77,-0.0619037023624744,0.671720052126779,All other offspeed
+"Lynn, Lance",CH,80,-0.0619451741212727,0.349032326773408,All other offspeed
+"Means, John",CH,125,-0.0621287317012079,0.705428081368993,All other offspeed
+"Brieske, Beau",CH,310,-0.0626472280937093,0.590021467549567,All other offspeed
+"Irvin, Cole",CH,193,-0.0626895888954327,0.879375016657991,All other offspeed
+"May, Dustin",CH,61,-0.0638987608651856,0.593186931410999,All other offspeed
+"Marinaccio, Ron",CH,225,-0.0643206462510389,0.373690098694194,All other offspeed
+"Cecconi, Slade",CH,157,-0.0644286499177906,0.649482513194898,All other offspeed
+"Silseth, Chase",FS,189,-0.0646891747485663,0.114933705852189,All other offspeed
+"Chavez, Jesse",CH,74,-0.0651109380441468,0.61607406770468,All other offspeed
+"Long, Sam",FS,65,-0.0655751852234511,0.527516889021491,All other offspeed
+"Cole, Gerrit",CH,136,-0.0655938810928233,0.690726779511483,All other offspeed
+"Flaherty, Jack",CH,52,-0.0658440090104585,0.766083162851585,All other offspeed
+"Senzatela, Antonio",CH,99,-0.0661490255827433,0.090132503501544,All other offspeed
+"Headrick, Brent",FS,55,-0.0663223115469511,0.622377620375707,All other offspeed
+"Allard, Kolby",CH,190,-0.0664373444059074,0.42369797996158,All other offspeed
+"Sands, Cole",FS,265,-0.0676257207493765,0.663823295406882,All other offspeed
+"Vest, Will",CH,128,-0.0678370988713648,0.733771892184215,All other offspeed
+"Whitlock, Garrett",CH,294,-0.0681362130543624,0.186431928291015,All other offspeed
+"Sánchez, Sixto",CH,83,-0.0696448736907497,0.831257644524491,All other offspeed
+"Hanifee, Brenan",CH,45,-0.0699954946057024,0.785334431670098,All other offspeed
+"Graceffo, Gordon",CH,48,-0.0709732109482558,0.599928390499227,All other offspeed
+"Soroka, Michael",CH,199,-0.0714412997757858,0.451340219361292,All other offspeed
+"Suárez, Albert",CH,264,-0.0723941995645228,0.501578792134454,All other offspeed
+"Bassitt, Chris",FS,101,-0.0724294448802203,0.0425862515664263,All other offspeed
+"Paddack, Chris",CH,672,-0.0724997069323312,0.469469085936073,All other offspeed
+"Phillips, Tyler",FS,268,-0.0728377015043739,0.419782875302836,All other offspeed
+"López, Reynaldo",CH,61,-0.0738850288432125,0.923543013064262,All other offspeed
+"Seabold, Connor",CH,87,-0.0745153650584356,0.0627571793738595,All other offspeed
+"Elder, Bryce",CH,330,-0.0748090689288704,0.0944743870172978,All other offspeed
+"Herget, Kevin",CH,64,-0.0750225199178397,0.64531730080661,All other offspeed
+"Faedo, Alex",CH,118,-0.0754075382345699,0.539625119468368,All other offspeed
+"Lucas, Easton",CH,45,-0.0758607787228958,0.586468121429723,All other offspeed
+"Woods Richardson, Simeon",CH,233,-0.0761945145568173,0.0857344664414381,All other offspeed
+"Hudson, Dakota",CH,52,-0.0766329015169869,0.330985677675409,All other offspeed
+"Alcala, Jorge",CH,43,-0.0767825128764077,0.932463005141715,All other offspeed
+"Molina, Anthony",CH,150,-0.0772375611019202,0.698197914321908,All other offspeed
+"Kowar, Jackson",CH,66,-0.0773076613320218,0.115132802560402,All other offspeed
+"Dobnak, Randy",CH,55,-0.077469192129836,0.00453443323790902,All other offspeed
+"Legumina, Casey",CH,97,-0.0778174685208066,0.512247059364756,All other offspeed
+"Assad, Javier",CH,108,-0.0784303693834951,0.392024111699474,All other offspeed
+"Wilson, Bryse",CH,115,-0.0784658406738022,0.60533546190987,All other offspeed
+"Severino, Luis",CH,261,-0.0790801928140251,0.383326976471219,All other offspeed
+"Schreiber, John",CH,71,-0.0809291503848933,0.416225538048837,All other offspeed
+"Fedde, Erick",CH,380,-0.0814820439521688,0.284634739877759,All other offspeed
+"Strahm, Matt",CH,44,-0.0832633620790821,0.03868002040171,All other offspeed
+"García, Luis",FS,255,-0.0870051795310625,0.873526854060015,All other offspeed
+"Greene, Hunter",FS,168,-0.0883475920259279,0.240264381473925,All other offspeed
+"Hagenman, Justin",CH,43,-0.0898114033137424,0.659571751715784,All other offspeed
+"Williams, Gavin",CH,51,-0.0907999761148894,0.741294977009279,All other offspeed
+"Nelson, Ryne",CH,182,-0.0917137872168382,0.414380771819172,All other offspeed
+"Vásquez, Randy",CH,218,-0.0923036832358381,0.438480404117772,All other offspeed
+"Eflin, Zach",CH,200,-0.0923507176386677,0.350457019222745,All other offspeed
+"Devenski, Chris",CH,133,-0.0930739009013466,0.571840493623976,All other offspeed
+"Mikolas, Miles",CH,355,-0.0931420975677218,0.742697059893011,All other offspeed
+"Gilbert, Logan",CH,51,-0.0932074341998104,0.34461418771692,All other offspeed
+"Scott, Christian",FS,62,-0.0938132622644314,0.770274351891449,All other offspeed
+"Winckowski, Josh",CH,115,-0.0951795278752723,0.333382452418341,All other offspeed
+"Tong, Jonah",CH,74,-0.0967769558423564,0.536802318983553,All other offspeed
+"Kolek, Stephen",CH,157,-0.099002099402648,0.131131252150031,All other offspeed
+"Gibson, Cade",CH,82,-0.0992526709258774,0.386549667589127,All other offspeed
+"Banks, Tanner",CH,142,-0.100740323680689,0.583859701265742,All other offspeed
+"Foley, Jason",CH,45,-0.100841633284149,0.690173563327502,All other offspeed
+"Civale, Aaron",FS,102,-0.101750199857468,0.686495077954265,All other offspeed
+"Lauer, Eric",CH,141,-0.104902104543677,0.770929522386702,All other offspeed
+"Wrobleski, Justin",CH,55,-0.10512162407077,0.404474261766723,All other offspeed
+"Kremer, Dean",CH,61,-0.105563767756626,0.54964446902807,All other offspeed
+"Rodríguez, Yariel",FS,114,-0.1154248969354,0.01669693744061,All other offspeed
+"Ashcraft, Braxton",FS,40,-0.120326897633909,0.97108628748069,All other offspeed
+"Melton, Troy",FS,67,-0.123562217859417,0.0864899567157188,All other offspeed
+"Allen, Logan",FS,46,-0.130082004423694,0.805687321216418,All other offspeed
+"Prielipp, Connor",CH,71,-0.133878042457862,0.420018532308487,All other offspeed
+"Schultz, Paxton",CH,65,-0.143122920133924,8.30146825536567e-08,All other offspeed
+"Quantrill, Cal",CH,43,-0.14450730179047,0.845822313672142,All other offspeed
+"Griffin, Foster",FS,65,-0.146167888993964,2.98663508050677e-27,All other offspeed
+"Kay, Anthony",CH,124,-0.162384876935863,0.722088896407192,All other offspeed
+"Fleming, Josh",CH,76,-0.164702543428142,0.41673249602866,All other offspeed
+"Patrick, Chad",CH,53,-0.16612910503269,0.0423537818749612,All other offspeed
+"Newcomb, Sean",CH,81,-0.199937704274633,0.663804650346723,All other offspeed

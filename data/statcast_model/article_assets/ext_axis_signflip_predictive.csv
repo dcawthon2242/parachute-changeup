@@ -1,0 +1,5 @@
+pitch,n_pitchers,r,p,same_sign
+Slider,55,0.545,1.7e-05,TRUE
+Sweeper,19,0.233,0.34,TRUE
+Curveball,10,,,
+Knuckle-curve,10,,,

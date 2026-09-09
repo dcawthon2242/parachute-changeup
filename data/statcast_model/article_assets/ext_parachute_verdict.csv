@@ -1,0 +1,10 @@
+panel,label,est,se,kind
+The estimate,"D1 (14 seasons, 13 arms)",1.15,1.95,league
+The estimate,"MLB (20 seasons, 14 arms)",3.07,1.38,league
+The estimate,"Pooled, one row per arm",1.78,0.97,pooled
+Tests that would explain it,M1  four-seam usage dose,-0.75,1.04,mech
+Tests that would explain it,M2  after a four-seamer,2.34,2.62,mech
+Tests that would explain it,M3  well-tunnelled pitches,0.01,1.14,mech
+Tests that would explain it,F1  spin-rate gap control,-3.85,0.73,falsify
+Tests that would explain it,F2  held-out 2024-2026,-0.31,2.94,falsify
+Tests that would explain it,F3  within pitcher,2.5,2.26,falsify

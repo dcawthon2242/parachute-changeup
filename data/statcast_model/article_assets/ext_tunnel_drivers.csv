@@ -1,0 +1,8 @@
+driver,pearson,kind
+Velocity gap,0.769995982777525,spin / velo / movement
+Active-spin gap,-0.53787153006117,spin / velo / movement
+Movement gap,0.509684793585113,spin / velo / movement
+Spin-axis gap,0.461365837843777,spin / velo / movement
+Vertical-accel gap,0.245690720101634,spin / velo / movement
+Extension gap,0.107995890923672,release / slot
+Release-point separation,0.12386177358626,release / slot

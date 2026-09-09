@@ -1,0 +1,5 @@
+pitch,n_pitchers,r,lo,hi,pct_positive
+Slider,251,0.421,0.311,0.519,100
+Sweeper,135,0.368,0.208,0.5,100
+Curveball,76,-0.149,-0.356,0.076,10
+Knuckle-curve,30,-0.352,-0.657,0.035,4

@@ -1,0 +1,16 @@
+# Rubber-position CV pipeline (baseball/rubber_0*.py)
+# Install into a workspace-local venv, no host packages needed:
+#   python3 -m venv .venv-cv
+#   .venv-cv/bin/pip install -r baseball/requirements-cv.txt
+#
+# imageio-ffmpeg vendors a static ffmpeg binary, so no system ffmpeg is required.
+# PyAV is deliberately NOT used: its bundled libavdevice collides with the copy
+# inside opencv-python and macOS aborts on the duplicate objc class registration.
+# Frame extraction therefore shells out to the imageio-ffmpeg binary instead.
+
+imageio-ffmpeg==0.6.0
+numpy==2.5.2
+opencv-python-headless==5.0.0.93
+requests==2.34.2
+# Keypoint model in rubber_04h_keypoint.py (CPU wheel is fine).
+torch>=2.4

@@ -1,0 +1,17 @@
+feature,pearson,spearman,n
+velo gap vs FB,-0.77,-0.783,128997
+velo (abs),-0.758,-0.76,130150
+active-spin gap vs FB (measured),0.545,0.562,129656
+total movement gap vs FB,0.51,0.578,128998
+spin-eff gap vs FB (inferred),-0.462,-0.542,128629
+spin-axis gap vs FB (deg),0.461,0.513,128630
+vert accel (abs),-0.432,-0.419,130151
+vert-accel gap vs FB,-0.214,-0.231,128998
+spin rate (abs),0.146,0.173,129780
+release-point separation,0.131,0.11,130151
+extension gap vs FB,-0.112,-0.123,130070
+release side gap vs FB,0.078,0.069,130151
+release height gap vs FB,0.062,0.048,130151
+horiz-accel gap vs FB,-0.055,0.08,128998
+extension (abs),-0.051,-0.027,130070
+horiz accel (abs),0.027,0.127,130151

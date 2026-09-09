@@ -1,0 +1,19 @@
+group,cue,residual,pitchers,r,p,verdict
+Breaking,Arm Angle,shape only,500,0.04,0.37,null
+Breaking,Arm Angle,shape + post-hoc loc (published),500,0.025,0.58,null
+Breaking,Arm Angle,location in model,500,-0.095,0.035,significant
+Breaking,Trajectory,shape only,500,-0.171,0.00012,significant
+Breaking,Trajectory,shape + post-hoc loc (published),500,-0.142,0.0015,significant
+Breaking,Trajectory,location in model,500,-0.047,0.3,null
+Breaking,Spin Similarity,shape only,500,0.06,0.18,null
+Breaking,Spin Similarity,shape + post-hoc loc (published),500,0.043,0.34,null
+Breaking,Spin Similarity,location in model,500,-0.021,0.64,null
+Offspeed,Arm Angle,shape only,244,0.161,0.012,significant
+Offspeed,Arm Angle,shape + post-hoc loc (published),244,0.095,0.14,null
+Offspeed,Arm Angle,location in model,244,0.067,0.3,null
+Offspeed,Trajectory,shape only,244,-0.041,0.52,null
+Offspeed,Trajectory,shape + post-hoc loc (published),244,-0.167,0.0089,significant
+Offspeed,Trajectory,location in model,244,0.038,0.56,null
+Offspeed,Spin Similarity,shape only,243,-0.085,0.19,null
+Offspeed,Spin Similarity,shape + post-hoc loc (published),243,0.089,0.17,null
+Offspeed,Spin Similarity,location in model,243,0.004,0.95,null

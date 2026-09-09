@@ -1,0 +1,37 @@
+# ---- large raw / derived data (symlinked or hard-linked from the old workspace) ----
+# No trailing slashes: several of these are symlinks and must be ignored as files too.
+data/statcast_20*
+data/rubber
+data/obm
+data/swing_timing
+data/open_command
+data/ncaa
+data/statcast_model/tunnel_location
+data/statcast_model/*.rds
+data/statcast_model/*.log
+data/statcast_model/*_preds.csv
+data/statcast_model/rubber_move_sweep.csv
+data/kershaw_era_compare.rds
+*.rds
+
+# clips: keep only the two GIFs the case document embeds, plus manifests
+data/statcast_model/article_assets/clips/**/*.gif
+data/statcast_model/article_assets/clips/**/*.mp4
+!data/statcast_model/article_assets/clips/656302_2026_Cease_Dylan/02_PAIR_FF_left_CH_right.gif
+!data/statcast_model/article_assets/clips/681911_2026_Vesia_Alex/01_CH_2026-04-29_ab46_p3.gif
+
+# ---- python ----
+.venv*/
+__pycache__/
+*.pyc
+
+# ---- R ----
+.Rhistory
+.RData
+.Rproj.user/
+renv/library/
+
+# ---- misc ----
+.DS_Store
+*.log
+.env

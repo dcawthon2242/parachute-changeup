@@ -1,0 +1,31 @@
+brk_type,driver,gain,n_test
+SL,Breaking-ball location,29.4161950262053,4614
+SL,FB->BB separation,5.58852289112007,4614
+SL,Setup-fastball location,0.00634295764749915,4614
+SL,Trajectory tunnel (path ratio),2.19495794104464,4614
+SL,Velocity gap vs FB,0.0950304810030562,4613
+SL,Movement gap vs FB,0.128605172131053,4614
+SL,Spin-axis gap vs FB,0.400125564443993,4610
+SL,Active-spin gap vs FB,0.128894460879647,4288
+SL,Location + all deception cues,29.6389681848308,4285
+SL,"  (location alone, same sample)",29.4104914443629,4285
+CU,Breaking-ball location,31.7338384546939,2678
+CU,FB->BB separation,7.1802962811547,2678
+CU,Setup-fastball location,0.11605770836904,2678
+CU,Trajectory tunnel (path ratio),2.85284794187045,2678
+CU,Velocity gap vs FB,0.16911254202734,2678
+CU,Movement gap vs FB,0.107997120773933,2678
+CU,Spin-axis gap vs FB,-0.00513965495670582,2674
+CU,Active-spin gap vs FB,0.0907160573522644,2527
+CU,Location + all deception cues,30.786548668076,2523
+CU,"  (location alone, same sample)",30.744980652806,2523
+ST,Breaking-ball location,29.0523868360788,2643
+ST,FB->BB separation,6.02303408794103,2643
+ST,Setup-fastball location,0.0372452087681267,2643
+ST,Trajectory tunnel (path ratio),2.33785666155933,2643
+ST,Velocity gap vs FB,0.120121967796845,2643
+ST,Movement gap vs FB,0.00234840669313259,2643
+ST,Spin-axis gap vs FB,0.203374242821389,2636
+ST,Active-spin gap vs FB,-0.0445098321619771,2398
+ST,Location + all deception cues,29.3539847263631,2391
+ST,"  (location alone, same sample)",29.2961884701736,2391
