@@ -14,11 +14,10 @@ data/statcast_model/rubber_move_sweep.csv
 data/kershaw_era_compare.rds
 *.rds
 
-# clips: keep only the two GIFs the case document embeds, plus manifests
+# clips: keep only the GIF the README embeds, plus manifests
 data/statcast_model/article_assets/clips/**/*.gif
 data/statcast_model/article_assets/clips/**/*.mp4
 !data/statcast_model/article_assets/clips/656302_2026_Cease_Dylan/02_PAIR_synced_FF_left_CH_right.gif
-!data/statcast_model/article_assets/clips/681911_2026_Vesia_Alex/01_CH_2026-04-29_ab46_p3.gif
 
 # ---- python ----
 .venv*/

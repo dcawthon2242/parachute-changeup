@@ -64,15 +64,8 @@ What Statcast measured on those two pitches:
 | Spin rate | 2485 | 1645 | 840 rpm |
 | Result | swinging strike | swinging strike | |
 
-A four-degree axis gap and a release point inside a quarter of a foot, and
-twenty miles an hour between them. Freeze the frame at foot strike: nothing
-distinguishes the two deliveries. Abreu's front foot lands on fastball timing
-both times. On the right, the ball is not where the bat goes.
-
-For contrast, Alex Vesia's turnover changeup, roughly 32° off his fastball's
-axis. A good pitch, and you can watch it become a changeup:
-
-![Vesia turnover changeup](data/statcast_model/article_assets/clips/681911_2026_Vesia_Alex/01_CH_2026-04-29_ab46_p3.gif)
+Velo difference and spin similarity drive the performance of this pitch, and a
+Stuff+ model would not be able to pick that up.
 
 More video, straight from Savant (each link is that pitcher's changeup
 swinging strikes for the season, with a clip on every row):
@@ -84,7 +77,6 @@ swinging strikes for the season, with a clip on every row):
 | **Andrew Abbott** | 2023 | 9.8° | 45.0° | 6.2 | 39.4% | 28.7% | **+10.7** | [clips](https://baseballsavant.mlb.com/statcast_search?hfPT=CH%7C&hfGT=R%7C&hfPR=swinging%5C.%5C.strike%7C&hfSea=2023%7C&player_type=pitcher&pitchers_lookup%5B%5D=671096&group_by=name&min_pitches=0&min_results=0&min_pas=0&sort_col=pitches&player_event_sort=api_p_release_speed&sort_order=desc#results) |
 | **Robbie Ray** | 2025 | 6.1° | 43.6° | 8.6 | 39.2% | 33.1% | **+6.1** | [clips](https://baseballsavant.mlb.com/statcast_search?hfPT=CH%7C&hfGT=R%7C&hfPR=swinging%5C.%5C.strike%7C&hfSea=2025%7C&player_type=pitcher&pitchers_lookup%5B%5D=592662&group_by=name&min_pitches=0&min_results=0&min_pas=0&sort_col=pitches&player_event_sort=api_p_release_speed&sort_order=desc#results) |
 | **Osvaldo Bido** | 2025 | 7.1° | 35.2° | 5.7 | 25.0% | 18.5% | **+6.5** | [clips](https://baseballsavant.mlb.com/statcast_search?hfPT=CH%7C&hfGT=R%7C&hfPR=swinging%5C.%5C.strike%7C&hfSea=2025%7C&player_type=pitcher&pitchers_lookup%5B%5D=674370&group_by=name&min_pitches=0&min_results=0&min_pas=0&sort_col=pitches&player_event_sort=api_p_release_speed&sort_order=desc#results) |
-| Alex Vesia (turnover foil) | 2026 | ~32° | | | | | | [clips](https://baseballsavant.mlb.com/statcast_search?hfPT=CH%7C&hfGT=R%7C&hfPR=swinging%5C.%5C.strike%7C&hfSea=2026%7C&player_type=pitcher&pitchers_lookup%5B%5D=681911&group_by=name&min_pitches=0&min_results=0&min_pas=0&sort_col=pitches&player_event_sort=api_p_release_speed&sort_order=desc#results) |
 | Jeremy Hellickson (old school) | 2016 | pre-Hawk-Eye | | | | | | [clips](https://baseballsavant.mlb.com/statcast_search?hfPT=CH%7C&hfGT=R%7C&hfPR=swinging%5C.%5C.strike%7C&hfSea=2016%7C&player_type=pitcher&pitchers_lookup%5B%5D=476451&group_by=name&min_pitches=0&min_results=0&min_pas=0&sort_col=pitches&player_event_sort=api_p_release_speed&sort_order=desc#results) |
 
 "Above" is the out-of-fold whiff residual over tjStuff+ v3.0 features plus arm
@@ -265,9 +257,7 @@ it a different clock face."
 
 Jeremy Hellickson's changeup was mocked on movement plots as a fastball with
 the engine off and carried him to a Rookie of the Year season; scouts called
-it "invisible." Glavine and Maddux were described for two decades as pitchers
-whose every pitch looked like the fastball for half its flight. Pedro,
-Santana, Hoffman: the reputation was tunnel and sell, not horizontal run.
+it "invisible."
 
 When movement plots and stuff models arrived, that knowledge was reclassified
 as folklore because it could not be measured and the shape metrics said the
@@ -300,47 +290,6 @@ the contact. The arms who have both (Skubal 2021–22, Cease 2021 and 2026,
 Ragans 2024–25, Springs, Luzardo, Boyd, Rodón 2024, Ray 2025) are not marginal
 pitchers who found a trick. Several are among the best in baseball, and the
 pitch a model would have told them to fix is part of why.
-
----
-
-## 8. The ledger
-
-Everything that cuts against the argument, in the same document, because the
-pre-commit requires it and because the argument is stronger for surviving it.
-
-| Test | Result | Reading |
-|---|---|---|
-| Locked bin, MLB 2020–2026 | +3.07 ± 1.38, p = .038 | Positive |
-| Locked bin, D1 2023–2025 | +1.15 ± 1.95, p = .56 | Same direction, underpowered |
-| Pooled, one row per arm (decides) | **+1.78 ± 0.97, p = .067** | Suggestive, not established |
-| Era holdout | 2020–23 +4.83 (p = .003); 2024–26 −0.31 (p = .92) | The bin threshold may be fit to early seasons |
-| Run value, locked bin | −0.41 / 100 vs pool | The naive version gets hit in the air (§7) |
-| Overperform more after a four-seamer? | +2.34 ± 2.62, p = .37 | Null, underpowered |
-| Tunneling concentrates in the bin? | +0.01 ± 1.14, p = .99 | Null |
-| Spin-*rate* matching (negative control) | −3.85 ± 0.73, p < .001 | Control holds: it is axis, not rate |
-| Gate-search permutation | p ≈ .22 | Search alone does not beat noise |
-
-Two things said plainly. The mechanism tests that would demonstrate "the
-hitter mistook it for a fastball" at the pitch level came back null, so the
-perceptual story in §1 is the best explanation of the pattern, not a
-demonstrated one. And the raw whiff edge of the locked bin is only +0.7
-points: a +3 residual means "more miss than this stuff should produce," not
-"an elite whiff pitch."
-
----
-
-## 9. What settles it
-
-Written before the data was seen. Add D1 TrackMan 2022 and 2026 under the
-frozen spec in `baseball/spec_lock.R`, no retuning:
-
-- **Confirm** if pooled p < 0.05 **and** the point estimate stays above +1.2.
-- **Kill** if the point estimate falls below +0.8.
-- **Unresolved** otherwise; wait for MLB 2027.
-
-If it confirms, the industry has been grading a real pitch as a defect for a
-decade. If it kills, the old-school idea was a good story that did not survive
-Hawk-Eye, and this README gets rewritten to say so.
 
 ---
 
