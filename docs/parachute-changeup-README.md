@@ -50,10 +50,6 @@ Before Hawk-Eye imaged spin axes, the changeup was taught almost entirely as a
 - **Jeremy Hellickson** was the modern textbook case. His changeup was mocked
   on movement plots as a fastball with the engine off, and it carried him to a
   Rookie of the Year season anyway. Scouts called it "invisible."
-- **Tom Glavine and Greg Maddux** were described the same way for two decades:
-  every pitch looks like the fastball for the first half of its flight.
-- **Pedro Martínez, Johan Santana, Trevor Hoffman** threw changeups whose
-  reputation was about *tunnel and sell*, not horizontal run.
 
 When movement plots and stuff models arrived, this knowledge was reclassified
 as folklore, because it could not be measured and the shape metrics said the
@@ -89,43 +85,12 @@ purpose. He is the most frequent member of the locked bin (three seasons) and
 he does **not** beat the model. Matched spin alone is not enough. Matched spin
 **plus a large velocity kill** is the engine (see below).
 
-**What to look for in the Cease and Skubal clips.** Freeze the frame at
-release. You cannot tell which pitch it is. Watch the hitter's front foot: it
-lands on fastball timing. The bat is committed before the ball reaches the
-halfway point, and the ball is still on the fastball's line when it does. Then
-the ball is simply not there. There is no visible "changeup action," no
-arm-side fade to point at. That absence is the argument.
-
 **Cease, 2026-08-11 at Toronto, same at-bat vs. Abreu.** Left is pitch 99, a
 97.5 mph four-seamer. Right is pitch 98, the changeup one pitch earlier at
-77.7 mph, swinging strike. Same slot, same arm speed, same picture through
-foot strike. Scrub to the last second and watch where the bat is when the
-ball arrives.
+77.7 mph, swinging strike. Velo difference and spin similarity drive the
+performance of this pitch that a stuff+ model would not be able to pick up.
 
 ![Cease four-seam (left) vs changeup (right), same at-bat](../data/statcast_model/article_assets/clips/656302_2026_Cease_Dylan/02_PAIR_FF_left_CH_right.gif)
-
-**Vesia, 2026-04-29 vs. Miami, turnover changeup, swinging strike.** Good
-pitch, ~32° off his fastball's axis. You can see it become a changeup. Compare
-the way the ball behaves out of the hand to Cease's.
-
-![Vesia turnover changeup](../data/statcast_model/article_assets/clips/681911_2026_Vesia_Alex/01_CH_2026-04-29_ab46_p3.gif)
-
-Three Cease pairs and the Vesia clip are checked in under
-`data/statcast_model/article_assets/clips/`, with a `clips_manifest.csv`
-recording the Savant playId and mp4 URL for each. GIFs run 7–15 MB apiece;
-if the repo grows, move them to Git LFS or regenerate on demand with the
-script below.
-
-### Turnover foils (large axis gap: the shape pitch design likes)
-
-| Pitcher | Season | Axis gap vs FF | Why it is here | Video |
-|---|---|---|---|---|
-| **Alex Vesia** | 2026 | ~32° | Classic pronated "turnover" changeup. Real shape, reads as a changeup out of the hand. Stuff models grade it well. | [CH whiffs](https://baseballsavant.mlb.com/statcast_search?hfPT=CH%7C&hfGT=R%7C&hfPR=swinging%5C.%5C.strike%7C&hfSea=2026%7C&player_type=pitcher&pitchers_lookup%5B%5D=681911&group_by=name&min_pitches=0&min_results=0&min_pas=0&sort_col=pitches&player_event_sort=api_p_release_speed&sort_order=desc#results) |
-| **Matt Boyd** | 2025 | large | Turnover archetype named on Aug 3. | [CH whiffs](https://baseballsavant.mlb.com/statcast_search?hfPT=CH%7C&hfGT=R%7C&hfPR=swinging%5C.%5C.strike%7C&hfSea=2025%7C&player_type=pitcher&pitchers_lookup%5B%5D=571510&group_by=name&min_pitches=0&min_results=0&min_pas=0&sort_col=pitches&player_event_sort=api_p_release_speed&sort_order=desc#results) |
-
-Watch these next to Cease. The Vesia changeup is a good pitch, but you can
-*see* it become a changeup. The hitter can too, which is why its model grade
-and its results agree.
 
 ### Old-school reference clips
 
@@ -265,38 +230,6 @@ shape-plus-location expectation near 41% and a league changeup rate of 28%.*
 
 ---
 
-## The honest ledger
-
-The case above is the strongest we can make. Here is what cuts against it, in
-the same document, because the pre-commit requires it.
-
-| Test | Result | Reading |
-|---|---|---|
-| Locked bin, arm-clustered pool | +1.78 ± 0.97, p = .067 | Suggestive, not established |
-| Locked bin, MLB only | +3.07 ± 1.38, p = .038 | Positive |
-| Locked bin, D1 only | +1.15 ± 1.95, p = .56 | Directionally consistent, underpowered |
-| Era holdout | 2020–23 +4.83 (p = .003); **2024–26 −0.31** (p = .92) | Looks like a threshold fit to noise |
-| Run value, locked bin | **−0.41 RV/100** vs pool; xwOBA-implied −0.23 | Misses bats, gets hit in the air |
-| M2: overperform more after a four-seamer? | +2.34 ± 2.62, p = .37 | Null, underpowered |
-| M3: tunneling concentrates in the bin? | +0.01 ± 1.14, p = .99 | Null |
-| F1: spin-*rate* matching | **−3.85 ± 0.73**, p < .001 | Negative control holds |
-| Gate-search permutation | search-corrected p ≈ .22 | The searched winner is not real |
-| Split-half of the search | in-sample +3.60 → held-out +0.50 | 86% shrinkage |
-
-Two things are worth saying plainly. First, **every mechanism test that would
-say "the hitter mistook it for a fastball" came back null.** The argument in
-this README is physically plausible and consistent with the residual pattern,
-but it has not been *demonstrated* as a perception effect. Second, **the raw
-whiff edge of the locked bin is only +0.7 points.** A +3 residual means "more
-miss than this stuff should produce," not "an elite whiff pitch."
-
-Three findings from the same battery do not depend on the bin and are safer
-to act on: tighter tunneling → more whiffs (+0.47/SD, p = .009); tighter
-release scatter → more whiffs (−0.42/SD, p = .003); changeups thrown right
-after a four-seamer underperform for everyone (−1.72, p < .001).
-
----
-
 ## Where the naive version breaks, and the refinement we believe
 
 The purest tight-axis pitch misses bats and **still loses runs**: whiff channel
@@ -318,24 +251,6 @@ The matched axis buys the swing. Seam-shifted wake, movement the spin does not
 predict and the hitter cannot see, buys the miss and protects the contact. If
 this survives a pre-registered test it reconciles the whiff finding with the
 run-value finding. Until then it lives in `06_exploratory/`.
-
----
-
-## What would settle it
-
-Already written, before the data was seen. Add D1 TrackMan 2022 and 2026 under
-the frozen spec in `baseball/spec_lock.R`, no retuning:
-
-- **Confirm** if pooled p < 0.05 **and** the point estimate stays above +1.2.
-- **Kill** if the point estimate falls below +0.8.
-- **Unresolved** otherwise; wait for MLB 2027.
-
-Arm-clustered estimator decides. Extra seasons from arms already in 2023–2025
-are not independent.
-
-We think it confirms. We wrote this README so the argument is on the record
-before the number is. If it kills, the old-school idea was a good story that
-did not survive Hawk-Eye, and this document should be rewritten to say so.
 
 ---
 
