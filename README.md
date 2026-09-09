@@ -1,218 +1,367 @@
-# parachute-changeup
+# The Parachute Changeup
 
-Pitching research in R and Python on Statcast (MLB 2015–2026), D1 TrackMan,
-and broadcast video. The flagship program asks whether a **changeup that spins
-on the same axis as the pitcher's four-seamer** ("parachute" changeup) beats
-industry stuff models on whiff because deception is a property of the
-fastball–changeup *pair*, not of the pitch alone. Around it sit the programs
-that fed it or grew out of it: velocity separation, tunneling, swing timing,
-arm-slot reconstruction, and a computer-vision pipeline that measures where a
-pitcher stands on the rubber.
+**A changeup that spins like the fastball is the most underrated pitch in
+baseball, and the tools the industry uses to grade pitches are built in a way
+that guarantees they will keep underrating it.**
 
-> **Parachute status (locked spec, arm-clustered): +1.78 ± 0.97 whiff points
-> above model, p = 0.067. Not established. Negative on run value. Do not ship
-> as a pitch-design recommendation.** The confirmatory test is pre-registered
-> in [`parachute_precommit.md`](data/statcast_model/article_assets/parachute_precommit.md)
-> and waits on D1 TrackMan 2022 and 2026.
+This repo is the research program behind that claim: Statcast 2020–2026, D1
+TrackMan 2023–2025, a stack of out-of-fold whiff models, an unsupervised search
+over the deception profile, a mechanism battery, and the broadcast video. The
+argument is below. The code, data policy, and script catalog are in
+[`docs/REPO_GUIDE.md`](docs/REPO_GUIDE.md); the full technical handoff is
+[`HANDOFF.md`](HANDOFF.md).
 
-Start here:
-
-| Document | Role |
-|---|---|
-| [`docs/parachute-changeup-README.md`](docs/parachute-changeup-README.md) | **The case for pair deception.** Advocacy piece with video, exemplar pitchers, and the honest ledger. |
-| [`HANDOFF.md`](HANDOFF.md) | Full technical handoff: spec, models, mechanism battery, pitfalls, script catalog, reproduction order. |
-| [`CLAUDE.md`](CLAUDE.md) | Operating rules (MUST / MUST NOT) for anyone or any agent working in this repo. |
-| [`parachute_decision_memo.md`](data/statcast_model/article_assets/parachute_decision_memo.md) | Scientific status of record. Wins any disagreement with the article draft. |
-| [`parachute_useful.md`](data/statcast_model/article_assets/parachute_useful.md) | Prevalence and run-value decomposition. |
-| [`parachute_article.md`](data/statcast_model/article_assets/parachute_article.md) | Narrative draft (Aug 25, 2026). Optimistic. **Not confirmatory.** |
-| [`figure_captions.md`](data/statcast_model/article_assets/figure_captions.md) | Captions for every figure in `article_assets/`. |
-| [`CCAM-Tunneling-Project/README.md`](CCAM-Tunneling-Project/README.md) | The 2022–2024 tunneling metric and swing-decision model that preceded all of this. |
+> **Where the confirmatory number stands.** Under the pre-registered spec, the
+> matched-axis bin beats a location-aware stuff model by **+1.78 ± 0.97 whiff
+> points (arm-clustered, p = 0.067)** across MLB and D1. MLB alone is
+> **+3.07 ± 1.38, p = 0.038**. The decision rule for the next data
+> (D1 2022 and 2026) is already frozen in
+> [`parachute_precommit.md`](data/statcast_model/article_assets/parachute_precommit.md).
+> We think it confirms. This document is the argument for why, written down
+> before the number arrives.
 
 ---
 
-## Quick start
+## 1. The claim
 
-```bash
-git clone <this repo> parachute-changeup && cd parachute-changeup
+Two changeups can have the same velocity, the same movement, the same release
+point, and grade identically on Stuff+, tjStuff+, PitchingBot, or any in-house
+LightGBM clone. One of them spins on the same axis as the pitcher's
+four-seamer. The other spins twenty-five degrees away. **The first one will
+miss more bats than the model says, and the second one will not.**
 
-# R (data.table, lightgbm, ggplot2, bit64, mgcv, ...)
-Rscript install.R
+The reason is not in the changeup. It is in the fastball. A hitter's swing
+decision is made on a prediction of *which* pitch is coming, and that
+prediction is built from the cues available in the first fifteen feet: release
+point, arm slot, arm speed, and the spin picture on the ball. A changeup that
+matches the four-seamer on all four says "fastball" for the whole decision
+window. The only cue that says otherwise is velocity, and velocity is exactly
+the cue a hitter cannot resolve until the swing is committed. So the hitter
+swings on fastball timing at a ball that arrives ten, fifteen, twenty mph late
+and has already dropped under the barrel.
 
-# Python (video / CV pipeline, NCAA scrapers, clip GIFs)
-python3 -m venv .venv-cv
-.venv-cv/bin/pip install -r baseball/requirements-cv.txt
+Stuff models grade the **object**. Deception is a property of the **pair**.
+That is the whole thesis, and every section below is one way of checking it.
+
+---
+
+## 2. Watch it
+
+Dylan Cease, 2026-08-11 at Toronto, fifth inning, same at-bat against Wilyer
+Abreu. Left is pitch 99, a four-seamer at 97.5 mph. Right is pitch 98, the
+changeup one pitch earlier at 77.7 mph. **Both swinging strikes.** The clips
+are release-synchronized to within 0.05 s.
+
+![Cease four-seam (left) and changeup (right), same at-bat, both whiffs](data/statcast_model/article_assets/clips/656302_2026_Cease_Dylan/02_PAIR_synced_FF_left_CH_right.gif)
+
+What Statcast measured on those two pitches:
+
+| | Four-seam (pitch 99) | Changeup (pitch 98) | Gap |
+|---|---|---|---|
+| Velocity | 97.5 | 77.7 | **19.8 mph** |
+| Spin axis | 195° | 191° | **4°** |
+| Release point (x, z) | −1.78, 6.20 ft | −1.56, 6.23 ft | 0.2 ft |
+| Spin rate | 2485 | 1645 | 840 rpm |
+| Result | swinging strike | swinging strike | |
+
+A four-degree axis gap and a release point inside a quarter of a foot, and
+twenty miles an hour between them. Freeze the frame at foot strike: nothing
+distinguishes the two deliveries. Abreu's front foot lands on fastball timing
+both times. On the right, the ball is not where the bat goes.
+
+For contrast, Alex Vesia's turnover changeup, roughly 32° off his fastball's
+axis. A good pitch, and you can watch it become a changeup:
+
+![Vesia turnover changeup](data/statcast_model/article_assets/clips/681911_2026_Vesia_Alex/01_CH_2026-04-29_ab46_p3.gif)
+
+More video, straight from Savant (each link is that pitcher's changeup
+swinging strikes for the season, with a clip on every row):
+
+| Pitcher | Season | Axis gap | Slot | Velo sep | Whiff | Model | Above | |
+|---|---|---|---|---|---|---|---|---|
+| **Dylan Cease** | 2026 | 4.8° | 59.7° | 15.0 | 53.6% | 42.5% | **+11.0** | [clips](https://baseballsavant.mlb.com/statcast_search?hfPT=CH%7C&hfGT=R%7C&hfPR=swinging%5C.%5C.strike%7C&hfSea=2026%7C&player_type=pitcher&pitchers_lookup%5B%5D=656302&group_by=name&min_pitches=0&min_results=0&min_pas=0&sort_col=pitches&player_event_sort=api_p_release_speed&sort_order=desc#results) |
+| **Tarik Skubal** | 2021 | 3.7° | 60.0° | 12.0 | 49.1% | 38.8% | **+10.3** | [clips](https://baseballsavant.mlb.com/statcast_search?hfPT=CH%7C&hfGT=R%7C&hfPR=swinging%5C.%5C.strike%7C&hfSea=2021%7C&player_type=pitcher&pitchers_lookup%5B%5D=669373&group_by=name&min_pitches=0&min_results=0&min_pas=0&sort_col=pitches&player_event_sort=api_p_release_speed&sort_order=desc#results) |
+| **Andrew Abbott** | 2023 | 9.8° | 45.0° | 6.2 | 39.4% | 28.7% | **+10.7** | [clips](https://baseballsavant.mlb.com/statcast_search?hfPT=CH%7C&hfGT=R%7C&hfPR=swinging%5C.%5C.strike%7C&hfSea=2023%7C&player_type=pitcher&pitchers_lookup%5B%5D=671096&group_by=name&min_pitches=0&min_results=0&min_pas=0&sort_col=pitches&player_event_sort=api_p_release_speed&sort_order=desc#results) |
+| **Robbie Ray** | 2025 | 6.1° | 43.6° | 8.6 | 39.2% | 33.1% | **+6.1** | [clips](https://baseballsavant.mlb.com/statcast_search?hfPT=CH%7C&hfGT=R%7C&hfPR=swinging%5C.%5C.strike%7C&hfSea=2025%7C&player_type=pitcher&pitchers_lookup%5B%5D=592662&group_by=name&min_pitches=0&min_results=0&min_pas=0&sort_col=pitches&player_event_sort=api_p_release_speed&sort_order=desc#results) |
+| **Osvaldo Bido** | 2025 | 7.1° | 35.2° | 5.7 | 25.0% | 18.5% | **+6.5** | [clips](https://baseballsavant.mlb.com/statcast_search?hfPT=CH%7C&hfGT=R%7C&hfPR=swinging%5C.%5C.strike%7C&hfSea=2025%7C&player_type=pitcher&pitchers_lookup%5B%5D=674370&group_by=name&min_pitches=0&min_results=0&min_pas=0&sort_col=pitches&player_event_sort=api_p_release_speed&sort_order=desc#results) |
+| Alex Vesia (turnover foil) | 2026 | ~32° | | | | | | [clips](https://baseballsavant.mlb.com/statcast_search?hfPT=CH%7C&hfGT=R%7C&hfPR=swinging%5C.%5C.strike%7C&hfSea=2026%7C&player_type=pitcher&pitchers_lookup%5B%5D=681911&group_by=name&min_pitches=0&min_results=0&min_pas=0&sort_col=pitches&player_event_sort=api_p_release_speed&sort_order=desc#results) |
+| Jeremy Hellickson (old school) | 2016 | pre-Hawk-Eye | | | | | | [clips](https://baseballsavant.mlb.com/statcast_search?hfPT=CH%7C&hfGT=R%7C&hfPR=swinging%5C.%5C.strike%7C&hfSea=2016%7C&player_type=pitcher&pitchers_lookup%5B%5D=476451&group_by=name&min_pitches=0&min_results=0&min_pas=0&sort_col=pitches&player_event_sort=api_p_release_speed&sort_order=desc#results) |
+
+"Above" is the out-of-fold whiff residual over tjStuff+ v3.0 features plus arm
+angle plus location (`r4`). Build your own with
+`baseball/parachute_clips.py` (see the repo guide).
+
+---
+
+## 3. Let the data pick the profile
+
+The most convincing thing we did was stop describing the pitch and ask the
+data to describe it for us.
+
+We took every four-seam-primary pitcher-season 2020–2026 with at least 60
+changeup swings, scored each one on how much its changeup out-whiffed a stuff
+model that **never sees the fastball relationship** (tjStuff+ shape features,
+arm angle, and location, out of fold), and then ran an unsupervised grid search
+over four gates that describe the fastball–changeup pair:
+
+| Gate | Grid | What it encodes |
+|---|---|---|
+| Arm slot | 25° → 55° by 2.5° | Where the ball comes from |
+| Spin-axis gap vs four-seam | 6° → 30° by 2° | How much the spin picture gives away |
+| Four-seam active spin | .85 → .96 by .02 | How "clean" the fastball's spin is |
+| Changeup active spin | .85 → .96 by .02 | How "clean" the changeup's spin is |
+
+6,084 combinations, minimum bin of 20 seasons, objective = mean residual in
+the bin minus mean residual for everyone else. No hand-picking. No named
+pitchers. `baseball/optimal_gates.R`.
+
+![Optimal gate search](data/statcast_model/article_assets/fig37_optimal_gates.png)
+
+### What the optimizer chose
+
+```
+arm slot          >= 35°
+axis gap          <= 8°
+FF active spin    >= 0.85     (grid floor)
+CH active spin    >= 0.89
 ```
 
-Everything runs from the repo root and addresses data as `data/...`:
+Twenty pitcher-seasons, **+2.89 whiff points above model**, 95% CI
+[+0.85, +4.92], nominal p = 0.008. And the top of the roster it produced,
+with no names supplied:
+
+| Pitcher | Season | Arm | Axis gap | Velo sep | Whiff | Expected | Above |
+|---|---|---|---|---|---|---|---|
+| **Dylan Cease** | 2026 | 59.7° | 4.8° | 15.0 | 53.6% | 42.5% | **+11.0** |
+| **Tarik Skubal** | 2021 | 60.0° | 3.7° | 12.0 | 49.1% | 38.8% | **+10.3** |
+| Osvaldo Bido | 2025 | 35.2° | 7.1° | 5.7 | 25.0% | 18.5% | +6.5 |
+| Robbie Ray | 2025 | 43.6° | 6.1° | 8.6 | 39.2% | 33.1% | +6.1 |
+| Angel Zerpa | 2023 | 41.6° | 7.2° | 7.8 | 31.3% | 25.3% | +5.9 |
+| Dennis Santana | 2021 | 35.1° | 3.4° | 8.5 | 40.2% | 34.6% | +5.7 |
+| Mike Foltynewicz | 2021 | 41.1° | 6.6° | 8.6 | 33.3% | 27.7% | +5.6 |
+
+Fifteen of the twenty seasons are positive; the median is about +3. The two
+pitchers the whole program had been circling by eye, the search found on its
+own, and put first and second.
+
+### What the search tells you that a single bin cannot
+
+Three things came out of watching the optimizer work that we consider
+stronger evidence than the winning cell itself.
+
+**It threw away the spin-efficiency gates.** Both active-spin thresholds
+collapsed to the bottom of their grids. The optimizer was allowed to demand
+clean spin on either pitch and declined. Whatever the deception is, it is not
+"high active spin." It is the *relationship*.
+
+**It only ever reached for axis and slot.** Across the 300 split-half
+re-searches, the winning arm threshold wandered from 25° to 52.5° and the axis
+threshold from 8° to 22°, but the *direction* never flipped: tighter axis
+match and higher slot always scored higher. The location of the cliff is
+fuzzy. The slope of the hill is not.
+
+**The a-priori ladder points the same way.** Without any searching, using
+round cuts chosen before looking:
+
+| Gate | Seasons | Above model | p |
+|---|---|---|---|
+| All four gates merely above league average | 155 | −0.12 | .82 |
+| Spin floors (.85/.85) + axis ≤ 10° | 35 | +1.08 | .24 |
+| Spin floors + axis ≤ 10° **+ arm ≥ 44°** | 8 | **+4.46** | .046 |
+| Searched optimum (above) | 20 | +2.89 | .008 |
+
+Add the axis gate, the residual appears. Add the slot gate, it triples. That
+is the hypothesis behaving the way a real effect behaves under a sharpening
+definition, and the opposite of how a noise artifact behaves.
+
+**The honest limit, in two lines.** The searched optimum does not, by itself,
+beat a permutation null: shuffle the outcome and re-run the whole search 300
+times and the median "winner" is +2.32 (p ≈ .22 against the search). On split
+halves the winning cell shrinks 86%. That is why the confirmatory spec in
+`spec_lock.R` uses round a-priori cuts and clustered errors rather than the
+searched thresholds, and why we call the search *convincing* rather than
+*conclusive*. It tells you where to look. The pre-committed test tells you
+whether what you found is there.
+
+---
+
+## 4. Matched spin alone is nothing; matched spin plus a kill is the pitch
+
+The first result of the program, from July 31, 2026, and the one every later
+cut confirmed: a changeup that matches the fastball's axis but only takes six
+or seven mph off it **underperforms** its model. The same axis match with a
+twelve-to-fifteen mph kill overperforms by double digits.
+
+Kikuchi versus Cease is the whole story in two rows. Yusei Kikuchi is the most
+frequent member of the locked bin (three seasons) at about 9 mph of
+separation, and he sits at +0.1. Cease at 15 mph sits at +11.0. The fastball
+look buys the swing. The kill is what makes the swing miss.
+
+This is also why the gate search reached for slot. A high slot is what lets a
+pitcher throw a slow, backspinning ball that still *drops*: gravity does the
+work the changeup's spin is not doing, so the pitch parachutes under the
+barrel instead of floating into it.
+
+---
+
+## 5. The archetype the industry likes least is the one that beats its model most
+
+Stuff models have preferences. They like a "power changeup": hard, big axis
+separation from the fastball, real horizontal movement of its own. They
+dislike the parachute. Here is every changeup archetype on a strict temporal
+holdout, model trained 2020–2023 and asked about 2024–2026, four-seam-primary
+arms, 75-swing floor:
+
+| Archetype | Seasons | Predicted whiff | Actual | Miss |
+|---|---|---|---|---|
+| Extreme seam shift | 10 | 30.1% | 43.1% | **+13.0** |
+| **Tight axis match** | 17 | 30.3% | 41.3% | **+11.0** |
+| Seam-shifted match | 44 | 29.2% | 37.3% | +8.1 |
+| Axis + separation | 56 | 29.9% | 36.2% | +6.3 |
+| Traditional, low seam dev | 26 | 30.8% | 34.1% | +3.3 |
+| Power changeup | 66 | 30.1% | 29.2% | **−0.9** |
+
+Sort the league by how much a pitch designer would want to "fix" the
+changeup, and you have sorted it by how badly the model underestimates it. The
+power changeup, the shape design produces on purpose, is the only archetype
+that underperforms, and it does so significantly (−1.96, p = .0075).
+
+**It repeats.** Year-over-year correlation of the whiff residual is r = .577
+(n = 40, p = .0001) for the axis-plus-separation group and r = .453 (n = 31,
+p = .01) for the seam-shifted group. Arms who beat their model do it again the
+next season. Noise does not do that.
+
+**Handing the model the missing features does not fix it.** We added the
+axis gap, seam deviation, arm slot, arm-angle gap, season-level arsenal
+summaries, interaction terms, and finally an explicit archetype flag frozen on
+the training years:
+
+| Archetype | Gap, stuff only | Gap, everything added | Closed |
+|---|---|---|---|
+| Traditional | 3.76 | 0.73 | 81% |
+| Axis + separation | 6.98 | 3.51 | 50% |
+| Tight axis match | 10.73 | 6.38 | 41% |
+| Seam-shifted match | 9.93 | 6.81 | 31% |
+| Extreme seam shift | 16.28 | 12.41 | 24% |
+
+The stronger the effect, the less any feature set can absorb. That is not a
+missing column. It is a missing frame. A model that scores one pitch cannot
+represent an effect that lives between two, no matter what you feed it.
+
+A related trap, found the hard way: putting `axis_diff` into a gated
+all-types model made things *worse*. The model learned "bigger spin difference
+→ more miss" (splitters, kick-changes) and buried Cease and Vesia together.
+The right proof is a residual over a model that never sees the axis gap, then
+asking whether matched-axis pitches sit above zero. They do.
+
+---
+
+## 6. Old-school coaches had this right
+
+Before Hawk-Eye imaged a spin axis, the changeup was taught as a *disguise*,
+not a *shape*. "Fastball arm speed, fastball slot, fastball spin, take ten
+off" is in every manual from the 1970s through the 2000s. Nobody said "give
+it a different clock face."
+
+Jeremy Hellickson's changeup was mocked on movement plots as a fastball with
+the engine off and carried him to a Rookie of the Year season; scouts called
+it "invisible." Glavine and Maddux were described for two decades as pitchers
+whose every pitch looked like the fastball for half its flight. Pedro,
+Santana, Hoffman: the reputation was tunnel and sell, not horizontal run.
+
+When movement plots and stuff models arrived, that knowledge was reclassified
+as folklore because it could not be measured and the shape metrics said the
+pitch was bad. The resulting orthodoxy, kill efficiency, pronate, buy arm-side
+run, produced the power changeup in the table above. The disguise pitch it
+replaced is the one that beats the model.
+
+---
+
+## 7. Where the naive version breaks, and what fixes it
+
+Advocacy that hides the hole is not advocacy. The purest tight-axis changeup
+misses bats and **still loses runs**: its whiff channel is worth +0.37 runs
+per 100 and its ball-in-play channel gives back −0.90. A backspinning ball
+thrown slowly from a high slot is a fly ball when it is squared.
+
+The refinement, generated after the lock and therefore exploratory
+(`velo_sep_45`, `velo_sep_46`): hold the axis match and the velocity kill
+constant, and split by whether the changeup has **seam-shifted wake**,
+movement the spin does not predict and the hitter cannot see.
+
+| Cell | Seasons | Whiff residual | Run value / 100 |
+|---|---|---|---|
+| Axis match **+ seam shift** | 44 | **+4.00** (p < .0001) | **+0.38** |
+| Axis match, no seam shift | 26 | +0.88 (p = .44) | +0.12 |
+| Extreme seam shift | 10 | **+7.80** (p < .0001) | **+0.82** |
+
+The matched axis buys the swing. The seam shift buys the miss and protects
+the contact. The arms who have both (Skubal 2021–22, Cease 2021 and 2026,
+Ragans 2024–25, Springs, Luzardo, Boyd, Rodón 2024, Ray 2025) are not marginal
+pitchers who found a trick. Several are among the best in baseball, and the
+pitch a model would have told them to fix is part of why.
+
+---
+
+## 8. The ledger
+
+Everything that cuts against the argument, in the same document, because the
+pre-commit requires it and because the argument is stronger for surviving it.
+
+| Test | Result | Reading |
+|---|---|---|
+| Locked bin, MLB 2020–2026 | +3.07 ± 1.38, p = .038 | Positive |
+| Locked bin, D1 2023–2025 | +1.15 ± 1.95, p = .56 | Same direction, underpowered |
+| Pooled, one row per arm (decides) | **+1.78 ± 0.97, p = .067** | Suggestive, not established |
+| Era holdout | 2020–23 +4.83 (p = .003); 2024–26 −0.31 (p = .92) | The bin threshold may be fit to early seasons |
+| Run value, locked bin | −0.41 / 100 vs pool | The naive version gets hit in the air (§7) |
+| Overperform more after a four-seamer? | +2.34 ± 2.62, p = .37 | Null, underpowered |
+| Tunneling concentrates in the bin? | +0.01 ± 1.14, p = .99 | Null |
+| Spin-*rate* matching (negative control) | −3.85 ± 0.73, p < .001 | Control holds: it is axis, not rate |
+| Gate-search permutation | p ≈ .22 | Search alone does not beat noise |
+
+Two things said plainly. The mechanism tests that would demonstrate "the
+hitter mistook it for a fastball" at the pitch level came back null, so the
+perceptual story in §1 is the best explanation of the pattern, not a
+demonstrated one. And the raw whiff edge of the locked bin is only +0.7
+points: a +3 residual means "more miss than this stuff should produce," not
+"an elite whiff pitch."
+
+---
+
+## 9. What settles it
+
+Written before the data was seen. Add D1 TrackMan 2022 and 2026 under the
+frozen spec in `baseball/spec_lock.R`, no retuning:
+
+- **Confirm** if pooled p < 0.05 **and** the point estimate stays above +1.2.
+- **Kill** if the point estimate falls below +0.8.
+- **Unresolved** otherwise; wait for MLB 2027.
+
+If it confirms, the industry has been grading a real pitch as a defect for a
+decade. If it kills, the old-school idea was a good story that did not survive
+Hawk-Eye, and this README gets rewritten to say so.
+
+---
+
+## Using the repo
 
 ```bash
-Rscript baseball/spec_lock.R                       # the confirmatory number
-Rscript baseball/bin_roster_detail.R searched      # Cease 2026 / Skubal 2021 smoke test
+Rscript install.R                                          # R packages
+python3 -m venv .venv-cv && .venv-cv/bin/pip install -r baseball/requirements-cv.txt
+
+Rscript baseball/spec_lock.R                               # the confirmatory number
+Rscript baseball/bin_roster_detail.R searched              # §3 roster (Cease / Skubal on top)
+Rscript baseball/optimal_gates.R                           # §3 search (slow: 300 permutations × 6,084 cells)
 .venv-cv/bin/python baseball/parachute_clips.py --pitcher 656302 --season 2026 --n 3 --pair
 ```
 
-Raw Statcast, `.rds` caches, and video frames are **not in git** (several GB).
-`data/README.md` lists what is vendored, what is linked, and how to rebuild the
-rest. The reproduction order below assumes a fresh clone.
-
----
-
-## Reproduction (parachute program)
-
-Caches are skipped if the RDS exists; delete it or set `REFIT=1` where the
-script honours it.
-
-1. `Rscript baseball/scrape_statcast_multi.R 2020 2021 2022 2023 2024 2025 2026`
-   Direct Savant CSV, 4-day windows, resume-safe chunks. Hours. **Never `baseballr`.**
-2. Place `data/active_spin/active_spin_YYYY.csv` and `data/savant/arsenal_YYYY.csv` (already vendored).
-3. `Rscript baseball/parachute_extended_build.R FF` → `data/statcast_model/parachute_ff.rds`
-   Four-seam anchor only. `primary` exists for historical comparison and is not allowed for confirmatory work.
-4. `Rscript baseball/active_spin_merge.R` (loop must be `2020:2026`) → `active_spin_long.rds`
-5. `Rscript baseball/whiff_tjstuff.R` → `whiff_tjstuff.rds` (residuals r1–r4; use **r4** for anything gated on arm)
-6. `Rscript baseball/whiff_parallel.R` → `mlb_whiff_locaware.rds`
-7. NCAA: raw TrackMan → `ncaa_03_build.R` → `ncaa_04` … `ncaa_10` until `ncaa_whiff_resid.rds`, `ncaa_spineff_pairs.rds`, `ncaa_armangle.rds`, `ncaa_usage.rds` exist. `library(bit64)` **before** `as.character` on `PitcherId`.
-8. **`Rscript baseball/spec_lock.R`** → `locked_spec.rds`. Match the table in `HANDOFF.md` §3 before doing anything else.
-9. `mech_01` … `mech_11` regenerate the decision memo; `mech_12`–`15` reproduce the slot autopsy.
-10. Do not run a new gate search. `optimal_gates.R` is historical; if you demo it, quote the permutation p (≈ .22).
-
-Expected scale of `parachute_ff.rds`: ~300k–465k regular-season changeups with a valid FF anchor.
-
----
-
-## Repo layout
-
-```
-parachute-changeup/
-  README.md                 this file
-  CLAUDE.md                 operating rules (HANDOFF §0)
-  HANDOFF.md                full technical handoff
-  install.R                 R package install
-  baseball/                 all analysis scripts, flat (293 files; catalog below)
-    requirements-cv.txt     Python deps for the video / CV pipeline
-    tjstuff_run_values.csv  run-value lookup used by the tjStuff+ port
-  CCAM-Tunneling-Project/   2022–2024 tunneling metric + swing-decision model (own README)
-  docs/
-    parachute-changeup-README.md   the case for pair deception (video, exemplars, ledger)
-  data/
-    README.md               tracked vs untracked, rebuild instructions
-    active_spin/            vendored
-    savant/                 vendored arsenal usage
-    mlb_stats/, ncaa_rosters/, pitcher_heights.csv   vendored
-    statcast_model/
-      article_assets/       memos, captions, figures, ext_*.csv, clips/   (tracked)
-      *.rds, tunnel_location/                                            (ignored)
-    statcast_YYYY/, rubber/, obm/, swing_timing/, open_command/, ncaa/   (ignored)
-```
-
-`baseball/` is deliberately flat. `HANDOFF.md` §9 sketches numbered subfolders,
-but every script addresses siblings as `baseball/<name>` and data as `data/...`
-relative to the repo root, so moving files would break them. The grouping
-lives in the catalog instead.
-
----
-
-## Script catalog
-
-One line per family. Names are prefixes in `baseball/` unless noted.
-
-### Parachute changeup (flagship)
-
-| Scripts | Role |
-|---|---|
-| `spec_lock.R` | **The frozen confirmatory spec.** Only allowed bin definition for confirmatory claims. |
-| `parachute_extended_build.R`, `active_spin_merge.R`, `whiff_tjstuff.R`, `whiff_parallel.R`, `parachute_ff_anchor.R` | Build the FF-anchored changeup table and out-of-fold whiff residuals (r1–r4, location-aware). |
-| `bin_roster_detail.R`, `bin_gate_attrition.R`, `bin_pitcher_counts.R`, `core_plus_eff_floor.R` | Rosters and attrition for Core / Wide / mean / searched / eff90 bins. |
-| `mech_01_usage` … `mech_15_slot_ladder.R` | Mechanism and falsification battery behind the decision memo (dose, sequencing, tunnel, bands, spin-rate control, era holdout, within-pitcher, splitter, multiplicity, RV decomposition, D1 transfer, miss distance, slot). |
-| `optimal_gates.R`, `arm_gate_vs_descriptive.R`, `velo_corr_searched_bin.R`, `arm_slot_sweep.R`, `axis_sweep_arm40.R` | The Aug 11 gate search and its autopsy. **Historical; do not publish the winner.** |
-| `parachute_*.R` (roster, slot, spin_efficiency, highspin, within_pitcher, run_value, gb_check, filtered, above_avg, extended_test) | Pre-lock discovery variants. Label historical. |
-| `deception_changeups_2026.R`, `find_changeups_2026.R`, `pitch_pair_*.R`, `matched_spin_overperformance.R`, `whiff_matched_spin.R` | Jul 31–Aug 6 discovery: turnover vs parachute, matched-spin residuals. |
-| `axis_collapse.R`, `axis_after_tunnel.R`, `axis_sd_changeup.R`, `axis_signflip_validate.R`, `axis_vs_break.R`, `axis_gap_highspin.R`, `zone_axis_decomposition.R` | Spin-axis diagnostics, including the Figure 13 retraction of the spin-similarity finding. |
-| `spin_axis_atlas.R`, `spin_axis_audit.R`, `spin_axis_provenance.R`, `spin_examples_and_offspeed.R`, `same_axis_sliders.R`, `movement_only_spin_test.R`, `breaking_spin_recheck.R`, `active_spin_offspeed_recheck.R` | Arsenal-wide axis geometry and measurement provenance. |
-| `kick_change_*.R`, `spin_lookalike_kickchange_2026.R` | Kick-change foil: low-spin offspeed underperforms stuff. |
-| `cue_comparison.R`, `cue_decomposition.R`, `cue_outlier_pitchers.R`, `fig11_*.R`, `fig3_miss_drivers.R`, `article_visuals.R`, `mlb_chase_parachute.R`, `mlb_topthird.R`, `d1_resid_diagnose.R` | Figures and article support. |
-| `parachute_clips.py` | Savant broadcast clips → GIFs (and FF/CH side-by-sides) for the exemplar pitches. |
-
-### Velocity separation (absorbed parachute as a special case)
-
-| Scripts | Role |
-|---|---|
-| `velo_sep_01_blind.R` … `velo_sep_46_axis_matched_drop.R` | Do stuff models underrate big-separation changeups? Blind test, anchors, within-pitcher, D1 replication, seam-shifted wake, portability, archetypes, feature absorption, RV conversion, usage, teachability. `45`/`46` are the post-lock seam-shift hypothesis in the article draft. |
-| `velo_sep_by_type.R`, `velo_bin_interaction.R`, `velo_feature_attribution.R`, `velo_gate_grid.R`, `velo_resid_robustness.R`, `velo_gap_failures.R`, `whiff_velo.R`, `whiff_resid_vs_velo.R`, `chase_velo_slope.R` | Separation vs residual across types, robustness, attribution. |
-| `velo_gap_tunnel_tradeoff.R`, `pair_velo_gap_path_match.R`, `poor_tunnel_high_gap.R`, `high_gap_*.R`, `high_velo_gap_timing_misses.R`, `gap_*.R` | The gap-versus-tunnel tradeoff and where big gaps leak value. |
-| `hard_slider_vs_gap*.R`, `hard_slider_same_axaz.R`, `slider_gap_by_velo.R`, `why_hard_sliders_stuff.R` | 98/90 vs 98/86 slider question. |
-
-### Tunneling
-
-| Scripts | Role |
-|---|---|
-| `CCAM-Tunneling-Project/` | Original lattice tunnel metric (200 timestamps release → 150 ms before plate), swing-decision LightGBM, chase-above-expected. Own README. |
-| `swing_decision_rv_2026.R` | Out-of-sample rebuild of the swing-decision run value (train 2023–25, apply 2026). |
-| `angular_tunnel_*.R` | Tunneling as the hitter's eye receives it (angular, not field-coordinate); grading, validation, leaderboards, two-strike nulls. |
-| `tunnel_location_build.R`, `tunnel_location_*.R`, `tunnel_pairing_maps.R`, `tunnel_case_study.R`, `tunnel_command.R`, `tunnel_delta_test.R`, `breaking_location_tunnel.R`, `tight_tunnel_overperform.R`, `path_ratio_correlates.R` | Sequential FB → breaking-ball pairs; location dominates, tunnel adds 2–3%. |
-| `location_approach_test.R`, `whiff_chase_surfaces.R`, `combo_performance_channels.R` | Location / approach-angle surfaces. |
-
-### Miss-distance grade model
-
-`miss_grade_features.R`, `miss_grade_train.R`, `miss_grade_augmented.R`, `miss_grade_grid.R`, `miss_grade_putaway.R`, `miss_grade_gainers*.R`, `miss_grade_apply_insights.R`, `miss_decomp_2026.R`, `miss_distance_vs_xwobacon.R`, `risers_non2k_offspeed.R`, `driver_gain_all_types.R`, `remaining_residual.R`, `count_scope_test.R`.
-Target is bat-tracking `miss_distance` (2023 All-Star break onward), 2026 holdout.
-
-### Stuff models
-
-`tjstuff_plus_v3.R` (Nestico's tjStuff+ v3.0 port, `tjstuff_run_values.csv`), `stuff_platoon_features.R`, `stuff_platoon_train.R` (LHH/RHH split models; what release and rubber position add on top of shape), `kick_stuff_resid_2026.R`.
-
-### Swing timing, tscore / bscore, contact quality
-
-`swing_timing_fetch.R`, `swing_timing_probe.R`, `swing_timing_*.R`, `timing_*.R`, `tscore_plus.R`, `tscore_vs_zone*.R`, `tscore_whiffs.R`, `tscore_inzone_contact.R`, `whiff_plus.R`, `barrel_score.R`, `barrel_score_plus.R`, `barrel_vs_hardhit_dimensions.R`, `contact_targets*.R`, `tdev_vs_xwobacon_by_pitch.R`, `flail_target_2026.R`, `power_projection.R`.
-Timing disruption from batter-relative intercept depth; converts to runs per 100 swings.
-
-### Command, ERA, odds and ends
-
-`command_join.R` (OpenCommand inferred targets → command metrics), `physics_fip.R`, `physics_fip_era.R`, `kershaw_era_compare.R`, `changeup_platoon_2026.R`, `changeup_run_value_2026.R`, `sweeper_platoon_2026.R`, `sweeper_platoon_quality_2026.R`, `mlb_chase_decomp.R`, `scrape_scope.R`.
-
-### Arm slot
-
-`arm_angle_reconstruct.R`, `arm_angle_reconstruct2.R` (arm angle from release point + listed height, to extend seasons), `arm_angle_tunnel.R`, `arm_distribution.R`, `proxy_slot_feasibility.R`, `height_value_test.R`, `build_d1_heights.R`, `batter_silhouette.R`.
-
-### Rubber position (computer vision)
-
-`rubber_01_playids.py` → `rubber_01b_target_games.R` → `rubber_02_select_clips.R` → `rubber_02b_fetch_targets.R` → `rubber_03_fetch_frames.py` → `rubber_04*.py` (measure, label pack, label server, frame score, contact sheet, park triage, CV measure, keypoint, train pack, pose) → `rubber_05_calibrate.R`, `rubber_05b_label_qc.R` → `rubber_06_natural_experiment.R`, `rubber_07_counterfactual.R`, `rubber_07b_channel_decomp.R`, `rubber_08_handedness_pitchtype.R` → `rubber_09_annotate_examples.py`, `rubber_10_paper_figures.py`, `rubber_11_leaderboard.py`.
-Where a pitcher sets up on the rubber, measured from broadcast frames, and what it is worth. Deps in `requirements-cv.txt` (opencv, torch, imageio-ffmpeg).
-
-### Hitter eye point (OpenBiomechanics)
-
-`obm_probe.py`, `obm_eye_point.py`, `obm_hitter_eye_points.py`. Average L/R hitter eye position from C3D trials in Statcast feet, for the angular tunnel work. Needs `ezc3d`.
-
-### NCAA D1 port
-
-`ncaa_00_probe.R` … `ncaa_13_sequencing.R` (TrackMan axis comparability, inferred efficiency, parachute port, arm proxy, chase, sequencing), `scrape_ncaa_rosters.py`, `sidearm_discover.py`, `sidearm_probe.py`, `sidearm_scrape.py`, `sidearm_seeds.py` (roster scrapes via school athletics sites).
-TrackMan `SpinAxis` is a movement axis, not Hawk-Eye's imaged axis; the matched cut is ≈ 7.1°, not 10°.
-
-### Ingest
-
-`scrape_statcast_multi.R`, `scrape_statcast_2026.R` (direct Savant CSV), `active_spin_merge.R`, `swing_timing_fetch.R`.
-
----
-
-## Rules that cannot be relaxed
-
-Short form of `CLAUDE.md`:
-
-- Four-seam anchor only. No sinker/cutter fallback.
-- Arm-aware residual (`r4`) for anything gated on arm.
-- `library(bit64)` before `as.character` on NCAA `PitcherId`.
-- `spec_lock.R` is the only bin definition for confirmatory claims.
-- Arm-clustered SEs when pooling repeated pitcher-seasons.
-- `rv = -delta_run_exp`; positive favours the pitcher.
-- Round active-spin gaps to 4 decimals before threshold tests.
-- No searching for a spec after a null. No publishing the gate-search winner. No cherry-picked rosters as evidence. No `baseballr` scrapes. No imputing arsenal usage.
-
----
-
-## Provenance
-
-Code and memos were moved here on 2026-09-09 from a mixed work/baseball
-workspace where `baseball/` had never been committed, so this repo's first
-commit is the first version control these scripts have had. The source
-conversations are cited in `HANDOFF.md`. `CCAM-Tunneling-Project/` is copied
-in flat; its own 16-commit history remains at
-https://github.com/dcawthon2242/CCAM-Tunneling-Project.
+Raw Statcast, `.rds` caches, and video frames are not in git. Layout,
+reproduction order, data policy, the 293-script catalog, and the rules that
+cannot be relaxed are in [`docs/REPO_GUIDE.md`](docs/REPO_GUIDE.md) and
+[`CLAUDE.md`](CLAUDE.md). Status documents:
+[decision memo](data/statcast_model/article_assets/parachute_decision_memo.md) ·
+[pre-commit](data/statcast_model/article_assets/parachute_precommit.md) ·
+[prevalence and run value](data/statcast_model/article_assets/parachute_useful.md) ·
+[article draft](data/statcast_model/article_assets/parachute_article.md) ·
+[figure captions](data/statcast_model/article_assets/figure_captions.md).

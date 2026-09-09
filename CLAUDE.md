@@ -10,7 +10,7 @@ The handoff (§9) proposes numbered subfolders under `baseball/`. This repo keep
 `baseball/` **flat** on purpose: every script addresses data as `data/...` and
 sibling scripts as `baseball/...` relative to the repo root, and reorganising
 would break those paths. The grouping in §9 is documented as a catalog in
-`README.md` instead. Run everything from the repo root:
+`docs/REPO_GUIDE.md` instead. Run everything from the repo root:
 `Rscript baseball/<script>.R`, `.venv-cv/bin/python baseball/<script>.py`.
 
 Large data (`data/statcast_YYYY`, `data/rubber`, `data/obm`, `data/swing_timing`,
