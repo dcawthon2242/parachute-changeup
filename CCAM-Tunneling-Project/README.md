@@ -138,38 +138,13 @@ tooling.
 ### Prior work this builds on
 
 The idea that tunneling has to be measured from the hitter's vantage point,
-not the centre-field camera's, is not new; this branch is an implementation of
-it with a measured eye position and a disc model of the ball.
+not the centre-field camera's, comes from perception research; this branch is
+an implementation of it with a measured eye position and a disc model of the
+ball.
 
-- Long, J., Pavlidis, H., & Alonso, M. (2018). *Prospectus Feature: Updating
-  Pitch Tunnels.* Baseball Prospectus, Jan 31, 2018. Re-computed Pitch Tunnels
-  from the batter's perspective using an eye position estimated from listed
-  height, Gameday stance data, and Mike Fast's method, and moved the tunnel
-  point to 150 ms before the plate.
-  <https://www.baseballprospectus.com/news/article/37436/prospectus-feature-updating-pitch-tunnels/>
-- Fast, M. Batter's-box view of PITCHf/x trajectories: a coordinate transform
-  with the y-axis running from the batter's head to the release point, first
-  used in his Hardball Times pitch-trajectory articles (c. 2008–2010).
-  <https://tht.fangraphs.com/>
-- Lentzner, M. (2011). *Baseball ProGUESTus: Looking at Pitches Through the
-  Batter's Eyes.* Baseball Prospectus, Mar 18, 2011. Argues that pitch shape
-  only means something in the batter's reference frame: a fastball looks
-  straight because its break cancels its release offset, a slider looks like it
-  moves because it lacks that compensation.
-  <https://www.baseballprospectus.com/news/article/13273/baseball-proguestus-looking-at-pitches-through-the-batters-eyes/>
-- Harris, J. M., & Drga, V. F. (2005). Using visual direction in
-  three-dimensional motion perception. *Nature Neuroscience*, 8(2), 229–233.
-  doi:10.1038/nn1389. Observers judge 3D motion from **visual direction** (the
-  angle between the object and where the observer faces) rather than binocular
-  depth cues, which is the perceptual basis for treating two pitches with the
-  same visual direction as one pitch until they diverge.
-  <https://www.nature.com/articles/nn1389>
 - Gray, R. (2017). *Pitch Tunneling & Perceptually Equivalent Pitches.* The
-  Perception & Action Podcast, Jun 24, 2017. Applies Harris & Drga to
-  tunneling: superimpose two pitches from the batter's eye and you see one ball
-  as long as their visual direction agrees.
+  Perception & Action Podcast, Jun 24, 2017. Two pitches with the same visual
+  direction from the batter's eye are perceptually one pitch until they
+  diverge; superimpose them from the batter's viewpoint and you see a single
+  ball. Overlays from the broadcast camera do not show what the hitter sees.
   <https://perceptionaction.com/pitchtunnels/>
-- Bahill, A. T., & LaRitz, T. (1984). Why can't batters keep their eyes on the
-  ball? *American Scientist*, 72(3), 249–253. Eye-tracking limits in the last
-  ~150 ms of flight, the basis for the commit point used here and by Baseball
-  Prospectus.
